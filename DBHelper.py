@@ -18,7 +18,7 @@ storage = firebase.storage()
 
 class DBHelper:
 
-    # Create account fuction which creates a new account.
+    # Create account function which creates a new authentication info.
     def createaccount(username, password, confirmpassword):
         email = username + "@hotmail.com"
         if password == confirmpassword:
@@ -27,7 +27,7 @@ class DBHelper:
         else:
             print("Confirmed password doesn't match to other password.")
 
-    # Login fuction which verifies the information given.
+    # Login function which verifies the given authentication info.
     def login(username, password):
         email = username + "@hotmail.com"
         try:
@@ -90,8 +90,8 @@ class DBHelper:
                 address = user.val()["Address"]
         return address
 
-    # Uploads the photo, input should be something like Photos_of_Users/example.png
-    # or something like Photos_of_Thieves/example.png for the thieves.
+    # Uploads the photo, input should be something like "Photos_of_Users/example.png"
+    # or something like "Photos_of_Thieves/example.png" for the thieves.
     def uploadphoto(userphoto):
         userphoto_str = str(userphoto)
         storage.child(userphoto_str).put(userphoto)
