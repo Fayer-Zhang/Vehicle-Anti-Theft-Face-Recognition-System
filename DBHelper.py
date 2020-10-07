@@ -95,7 +95,7 @@ class DBHelper:
         userphoto_str = str(userphoto)
         storage.child("Photos_of_Users/" + str(userphoto)).put("Photos_of_Users/" + str(userphoto))
 
-    # Uploads the photo of user, input should be something like "example.png"
+    # Uploads the photo of thief, input should be something like "example.png"
     def uploadthiefphoto(userphoto):
         userphoto_str = str(userphoto)
         storage.child("Photos_of_Thieves/" + str(userphoto)).put("Photos_of_Thieves/" + str(userphoto))
