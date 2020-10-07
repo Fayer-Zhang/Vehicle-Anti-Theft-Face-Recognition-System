@@ -100,10 +100,10 @@ class DBHelper:
         userphoto_str = str(userphoto)
         storage.child("Photos_of_Thieves/" + str(userphoto)).put("Photos_of_Thieves/" + str(userphoto))
 
-    # Downloads all the user photos, input should be something like "example.png"
+    # Downloads all the user photos.
     def downloadalluserphotos(self):
         storage.child("Photos_of_Users").download("Storage_from_Database")
 
-    # Downloads all the thief photos, input should be something like "example.png"
+    # Downloads all the thief photos.
     def downloadallthiefphotos(self):
         storage.child("Photos_of_Thieves").download("Storage_from_Thieves")
