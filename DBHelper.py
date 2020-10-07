@@ -90,13 +90,20 @@ class DBHelper:
                 address = user.val()["Address"]
         return address
 
-    # Uploads the photo, input should be something like "Photos_of_Users/example.png"
-    # or something like "Photos_of_Thieves/example.png" for the thieves.
-    def uploadphoto(userphoto):
+    # Uploads the photo of user, input should be something like "example.png"
+    def uploaduserphoto(userphoto):
         userphoto_str = str(userphoto)
-        storage.child(userphoto_str).put(userphoto)
+        storage.child("Photos_of_Users/" + str(userphoto)).put("Photos_of_Users/" + str(userphoto))
 
-    # Downloads the photo, input should be something like "Photos_of_Users/example.png"
-    def downloadphoto(userphoto):
+    # Uploads the photo of user, input should be something like "example.png"
+    def uploadthiefphoto(userphoto):
         userphoto_str = str(userphoto)
-        storage.child("Photos_of_Users/" + userphoto_str).download("Storage_from_Database/" + userphoto_str)
+        storage.child("Photos_of_Thieves/" + str(userphoto)).put("Photos_of_Thieves/" + str(userphoto))
+
+    # Downloads all the user photos, input should be something like "example.png"
+    def downloadalluserphotos(self):
+        storage.child("Photos_of_Users").download("Storage_from_Database")
+
+    # Downloads all the thief photos, input should be something like "example.png"
+    def downloadallthiefphotos(self):
+        storage.child("Photos_of_Thieves").download("Storage_from_Thieves")
