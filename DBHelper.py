@@ -96,5 +96,7 @@ class DBHelper:
         userphoto_str = str(userphoto)
         storage.child(userphoto_str).put(userphoto)
 
-
-
+    # Downloads the photo, input should be something like "Photos_of_Users/example.png"
+    def downloadphoto(userphoto):
+        userphoto_str = str(userphoto)
+        storage.child("Photos_of_Users/" + userphoto_str).download("Storage_from_Database/" + userphoto_str)
