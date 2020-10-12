@@ -1,18 +1,24 @@
+import cv2 
+import numpy as np 
 
+import sys,os,glob,numpy
+from skimage import io
 
-# This is a sample Python script.
+#read test photo 
+img = cv2.imread("C:/Users/fayer/OneDrive - University of Ottawa/CEG 4912/Project Test/data/photo4.jpg") 
+color = (0, 255, 0)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+grey = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
 
+classfier = cv2.CascadeClassifier("C:/Users/fayer/OneDrive - University of Ottawa/CEG 4912/Project Test/model/haarcascade_frontalface_alt2.xml")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+faceRects = classfier.detectMultiScale(grey, scaleFactor=1.2, minNeighbors=3, minSize=(32, 32)) 
 
+if len(faceRects) > 0:
+    for faceRect in faceRects:
+        x, y, w, h = faceRect 
+        cv2.rectangle(img, (x - 10, y - 10), (x + w + 10, y + h + 10), color, 3) 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+cv2.imwrite('output.jpg',img) 
+cv2.imshow("face_image",img)
+cv2.waitKey(0)
