@@ -1,4 +1,5 @@
 import pyrebase
+import firebase_admin
 
 firebaseConfig = {
     'apiKey': "AIzaSyAdL0W5HscjEDFPK4BDi6Cnc7FLa30GPYY",
@@ -8,7 +9,8 @@ firebaseConfig = {
     'storageBucket': "vehicleantitheftrecognition.appspot.com",
     'messagingSenderId': "163692530359",
     'appId': "1:163692530359:web:b6dc7ccfc56a79afb11b32",
-    'measurementId': "G-EPWP2LK89Q"
+    'measurementId': "G-EPWP2LK89Q",
+    'serviceAccount': 'vehicleantitheftrecognition-firebase-adminsdk-krrgw-05da515de5.json'
   }
 
 firebase = pyrebase.initialize_app(firebaseConfig)
@@ -19,7 +21,7 @@ storage = firebase.storage()
 class DBHelper:
 
     # Create account function which creates a new authentication info.
-    def createaccount(username, password, confirmpassword):
+    def createAccount(username, password, confirmpassword):
         email = username + "@hotmail.com"
         if password == confirmpassword:
             auth.create_user_with_email_and_password(email,password)
@@ -46,7 +48,7 @@ class DBHelper:
         db.child("Users").child(userID).remove()
 
     # Returns the first name or else an empty string.
-    def getfirstname(userID):
+    def getFirstName(userID):
         firstname = ""
         users = db.child("Users").get()
         for user in users.each():
@@ -55,7 +57,7 @@ class DBHelper:
         return firstname
 
     # Returns the last name or else an empty string.
-    def getlastname(userID):
+    def getLastName(userID):
         lastname = ""
         users = db.child("Users").get()
         for user in users.each():
@@ -64,7 +66,7 @@ class DBHelper:
         return lastname
 
     # Returns the e-mail or else an empty string.
-    def getemail(userID):
+    def getEmail(userID):
         email = ""
         users = db.child("Users").get()
         for user in users.each():
@@ -73,7 +75,7 @@ class DBHelper:
         return email
 
     # Returns the phone or else an empty string.
-    def getphone(userID):
+    def getPhone(userID):
         phone = ""
         users = db.child("Users").get()
         for user in users.each():
@@ -82,7 +84,7 @@ class DBHelper:
         return phone
 
     # Returns the address or else an empty string.
-    def getaddress(userID):
+    def getAddress(userID):
         address = ""
         users = db.child("Users").get()
         for user in users.each():
@@ -91,19 +93,24 @@ class DBHelper:
         return address
 
     # Uploads the photo of user, input should be something like "example.png"
-    def uploaduserphoto(userphoto):
+    def uploadUserPhoto(userphoto):
         userphoto_str = str(userphoto)
         storage.child("Photos_of_Users/" + str(userphoto)).put("Photos_of_Users/" + str(userphoto))
 
     # Uploads the photo of thief, input should be something like "example.png"
-    def uploadthiefphoto(userphoto):
+    def uploadThiefPhoto(userphoto):
         userphoto_str = str(userphoto)
         storage.child("Photos_of_Thieves/" + str(userphoto)).put("Photos_of_Thieves/" + str(userphoto))
 
     # Downloads all the user photos.
-    def downloadalluserphotos(self):
+    def downloadAllUserphotos(self):
         storage.child("Photos_of_Users").download("Storage_from_Database")
 
     # Downloads all the thief photos.
-    def downloadallthiefphotos(self):
+    def downloadAllThiefphotos(self):
         storage.child("Photos_of_Thieves").download("Storage_from_Thieves")
+
+   # Deletes photo of the specified user.
+    def deleteUserPhoto(userphoto):
+       storage.delete('Photos_of_Users/' + userphoto)
+
