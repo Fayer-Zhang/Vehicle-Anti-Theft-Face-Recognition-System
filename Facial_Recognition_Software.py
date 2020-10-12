@@ -1,16 +1,19 @@
 import cv2 
 import numpy as np 
 
-import sys,os,glob,numpy
+import sys,os,numpy
+from glob import glob
 from skimage import io
 
 #read test photo 
-img = cv2.imread("C:/Users/fayer/OneDrive - University of Ottawa/CEG 4912/Project Test/data/photo4.jpg") 
+pwd  =  sys.path[0]
+img = cv2.imread(pwd + "/Facial_test_images/photo2.jpg")
+
 color = (0, 255, 0)
 
 grey = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
 
-classfier = cv2.CascadeClassifier("C:/Users/fayer/OneDrive - University of Ottawa/CEG 4912/Project Test/model/haarcascade_frontalface_alt2.xml")
+classfier = cv2.CascadeClassifier(pwd + "/Facial_models/haarcascade_frontalface_alt2.xml")
 
 faceRects = classfier.detectMultiScale(grey, scaleFactor=1.2, minNeighbors=3, minSize=(32, 32)) 
 
