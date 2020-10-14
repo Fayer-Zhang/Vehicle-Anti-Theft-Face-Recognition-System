@@ -19,11 +19,11 @@ storage = firebase.storage()
 
 
 # Create account function which creates a new authentication info.
-def create_account(username, password, confirmpassword):
+def create_account(username, password, confirm_password):
     email = username + "@hotmail.com"
-    if password == confirmpassword:
+    if password == confirm_password:
         auth.create_user_with_email_and_password(email, password)
-        print("Account sucessfully created.")
+        print("Account successfully created.")
     else:
         print("Confirmed password doesn't match to other password.")
 
@@ -39,76 +39,74 @@ def login(username, password):
 
 
 # Uploads the data of specified user uploaded into firebase.
-def upload_data(userID, firstname, lastname, email, phone, address):
+def upload_data(user_id, firstname, lastname, email, phone, address):
     data = {"First Name": firstname, "Last Name": lastname, "E-Mail": email, "Phone": phone, "Address": address}
-    db.child("Users").child(userID).set(data)
+    db.child("Users").child(user_id).set(data)
 
 
 # Removes the data of specified user uploaded into firebase.
-def remove_data(userID):
-    db.child("Users").child(userID).remove()
+def remove_data(user_id):
+    db.child("Users").child(user_id).remove()
 
 
 # Returns the first name or else an empty string.
-def get_firstname(userID):
+def get_firstname(user_id):
     firstname = ""
     users = db.child("Users").get()
     for user in users.each():
-        if user.key() == userID:
+        if user.key() == user_id:
             firstname = user.val()["First Name"]
     return firstname
 
 
 # Returns the last name or else an empty string.
-def get_lastname(userID):
+def get_lastname(user_id):
     lastname = ""
     users = db.child("Users").get()
     for user in users.each():
-        if user.key() == userID:
+        if user.key() == user_id:
             lastname = user.val()["Last Name"]
     return lastname
 
 
 # Returns the e-mail or else an empty string.
-def get_email(userID):
+def get_email(user_id):
     email = ""
     users = db.child("Users").get()
     for user in users.each():
-        if user.key() == userID:
+        if user.key() == user_id:
             email = user.val()["E-Mail"]
     return email
 
 
 # Returns the phone or else an empty string.
-def get_phone(userID):
+def get_phone(user_id):
     phone = ""
     users = db.child("Users").get()
     for user in users.each():
-        if user.key() == userID:
+        if user.key() == user_id:
             phone = user.val()["Phone"]
     return phone
 
 
 # Returns the address or else an empty string.
-def get_address(userID):
+def get_address(user_id):
     address = ""
     users = db.child("Users").get()
     for user in users.each():
-        if user.key() == userID:
+        if user.key() == user_id:
             address = user.val()["Address"]
     return address
 
 
 # Uploads the photo of user, input should be something like "example.png"
-def upload_user_photo(userphoto):
-    userphoto_str = str(userphoto)
-    storage.child("Photos_of_Users/" + str(userphoto)).put("Photos_of_Users/" + str(userphoto))
+def upload_user_photo(user_photo):
+    storage.child("Photos_of_Users/" + user_photo).put("Photos_of_Users/" + user_photo)
 
 
 # Uploads the photo of thief, input should be something like "example.png"
-def upload_thief_photo(userphoto):
-    userphoto_str = str(userphoto)
-    storage.child("Photos_of_Thieves/" + str(userphoto)).put("Photos_of_Thieves/" + str(userphoto))
+def upload_thief_photo(user_photo):
+    storage.child("Photos_of_Thieves/" + user_photo).put("Photos_of_Thieves/" + user_photo)
 
 
 # Downloads all the user photos.
@@ -122,5 +120,5 @@ def download_all_thief_photos(self):
 
 
 # Deletes photo of the specified user.
-def delete_user_photo(userphoto):
-    storage.delete('Photos_of_Users/' + userphoto)
+def delete_user_photo(user_photo):
+    storage.delete('Photos_of_Users/' + user_photo)
