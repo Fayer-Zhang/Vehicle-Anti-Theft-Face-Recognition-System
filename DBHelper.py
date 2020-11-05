@@ -109,16 +109,20 @@ def upload_thief_photo(user_photo):
     storage.child("Photos_of_Thieves/" + user_photo).put("Photos_of_Thieves/" + user_photo)
 
 
-# Downloads all the user photos.
-def download_all_user_photos(self):
-    storage.child("Photos_of_Users").download("Storage_from_Database")
+# Downloads the specified user photo.
+def download_user_photo(user_photo):
+    storage.child("Photos_of_Users/" + str(user_photo)).download("Users_from_Database/" + str(user_photo))
 
 
-# Downloads all the thief photos.
-def download_all_thief_photos(self):
-    storage.child("Photos_of_Thieves").download("Storage_from_Thieves")
+# Downloads the specified thief photo.
+def download_thief_photo(user_photo):
+    storage.child("Photos_of_Thieves/" + str(user_photo)).download("Thieves_from_Database/" + str(user_photo))
 
 
 # Deletes photo of the specified user.
 def delete_user_photo(user_photo):
     storage.delete('Photos_of_Users/' + user_photo)
+
+# Deletes photo of the specified thief.
+def delete_thief_photo(user_photo):
+    storage.delete('Photos_of_Thieves/' + user_photo)
