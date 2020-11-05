@@ -123,6 +123,7 @@ def download_thief_photo(user_photo):
 def delete_user_photo(user_photo):
     storage.delete('Photos_of_Users/' + user_photo)
 
+
 # Deletes photo of the specified thief.
 def delete_thief_photo(user_photo):
     storage.delete('Photos_of_Thieves/' + user_photo)
