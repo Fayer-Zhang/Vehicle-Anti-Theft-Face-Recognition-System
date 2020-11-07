@@ -38,7 +38,7 @@ def face_detector_ssd(image):
     pwd = sys.path[0]
     net = cv2.dnn.readNetFromCaffe(pwd+"/Facial_models/deploy.prototxt", pwd+"/Facial_models/res10_300x300_ssd_iter_140000_fp16.caffemodel")
 
-    resize = (800, 800)
+    resize = (300, 300)
     confidence_thres = 0.65
     
     blob = cv2.dnn.blobFromImage(cv2.resize(image, dsize=resize), 1.0, resize, (104.0, 177.0, 123.0))
@@ -65,7 +65,20 @@ def face_detector_ssd(image):
 
 
 if __name__=="__main__":
+    
+    cameraCapture = cv2.VideoCapture(1)
+    success, frame = cameraCapture.read()
 
+    while success and cv2.waitKey(1) == -1:
+        success, frame = cameraCapture.read()
+        face_detector_ssd(frame)
+        cv2.imshow("video", frame)
+
+    cameraCapture.release()
+    cv2.destroyAllWindows() 
+
+    # image process (keep it in case if needed)
+    '''
     image_name = "8.jpg"
     split_name = image_name.split(".")
 
@@ -75,7 +88,7 @@ if __name__=="__main__":
     image = cv2.imread(image_read_path)
 
     image = face_detector_ssd(image)
-    #image = face_detector_haarcascade(image)
+    image = face_detector_haarcascade(image)
 
     print(image_save_path)
 
@@ -83,6 +96,7 @@ if __name__=="__main__":
     cv2.imshow("result", image)
     cv2.waitKey()
     cv2.destroyAllWindows()
+    '''
 
     
 
