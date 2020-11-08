@@ -228,7 +228,7 @@ def face_recognition_inference(rec_type):
 
 if __name__=="__main__":
     mode = 'test'
-    rec_type = 'Fisher'  # 'LBPH'   'Fisher' 'Eigen'
+    rec_type = 'Fisher'  # 'LBPH' 'Fisher' 'Eigen'
 
     if mode == 'train':
         training_recognizer(rec_type)

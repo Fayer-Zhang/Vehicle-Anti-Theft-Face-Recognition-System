@@ -4,8 +4,8 @@ import math
 import cv2
 
 
-label = "vince"
-num_cap = 12
+label = "Feier_Zhang"
+num_cap = 20
 
 path = sys.path[0]+'/Facial_images/face_rec/train/'+label
 
