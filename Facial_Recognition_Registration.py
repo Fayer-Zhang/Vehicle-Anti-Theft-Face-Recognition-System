@@ -4,7 +4,7 @@ import math
 import cv2
 
 
-label = "Feier_Zhang"
+label = "Batuhan_Basoglu"
 num_cap = 20
 
 path = sys.path[0]+'/Facial_images/face_rec/train/'+label
@@ -16,7 +16,7 @@ if not folder:
 	os.makedirs(path)
 
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 c=0                        
 while(c < num_cap):
     

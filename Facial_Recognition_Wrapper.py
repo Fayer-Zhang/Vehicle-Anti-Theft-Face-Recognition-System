@@ -164,6 +164,7 @@ def face_recognition_inference(rec_type):
     correct = 0
     error = 0
     faceDetector = dlib.get_frontal_face_detector()
+    print(sys.path[0])
     landmarkDetector = dlib.shape_predictor(sys.path[0]+'/Facial_models/shape_predictor_68_face_landmarks.dat')
     
     if (rec_type=='LBPH'):
@@ -179,7 +180,7 @@ def face_recognition_inference(rec_type):
     faceRecognizer.read(sys.path[0]+'/Facial_models/face_rec_model.yml')
     labelsMap = np.load(sys.path[0]+'/Facial_models/labels_map.pkl', allow_pickle=True)
 
-    cam = cv2.VideoCapture(1)
+    cam = cv2.VideoCapture(0)
 
     while(True):
         #imagePath = testFiles[i]
@@ -273,7 +274,6 @@ if __name__=="__main__":
     cv2.waitKey()
     cv2.destroyAllWindows()
     '''
-
     
 
 
