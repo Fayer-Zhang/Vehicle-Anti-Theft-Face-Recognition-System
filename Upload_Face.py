@@ -19,6 +19,3 @@ def upload_your_face(firstname, lastname, email, phone, address):
         Facial_Recognition_Registration.register_your_face("user_1")
         for x in range(20):
             DBHelper.upload_user_photo("user_1/" + str(x) + ".jpg")
-
-
-upload_your_face("Batuhan", "Basoglu", "bbaso079@uottawa.ca", "6138072241", "257 Lisgar Street")
