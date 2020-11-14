@@ -127,5 +127,3 @@ def delete_user_photo(user_photo):
 # Deletes photo of the specified thief.
 def delete_thief_photo(user_photo):
     storage.delete('Photos_of_Thieves/' + user_photo)
-
-upload_data("1", "Batuhan", "Basoglu", "bbaso079@uottawa.ca", "6138072241", "257 Lisgar Street")
