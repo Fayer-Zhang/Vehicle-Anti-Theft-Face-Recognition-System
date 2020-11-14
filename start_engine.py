@@ -1,5 +1,6 @@
+import os
 import DBHelper
-import Facial_Recognition_Software
+import Facial_Recognition_Wrapper
 
 
 def start():
@@ -9,28 +10,22 @@ def start():
     try:
         for user in users.each():
             count = +1
-            DBHelper.download_user_photo("user" + str(count) + "_" + str(1) + ".jpg")
-            DBHelper.download_user_photo("user" + str(count) + "_" + str(2) + ".jpg")
-            DBHelper.download_user_photo("user" + str(count) + "_" + str(3) + ".jpg")
-            DBHelper.download_user_photo("user" + str(count) + "_" + str(4) + ".jpg")
-            DBHelper.download_user_photo("user" + str(count) + "_" + str(5) + ".jpg")
-            DBHelper.download_user_photo("user" + str(count) + "_" + str(6) + ".jpg")
-            DBHelper.download_user_photo("user" + str(count) + "_" + str(7) + ".jpg")
+            for x in range(20):
+                if not os.path.isdir("Facial_images/face_rec/train/User_" + str(count)):
+                    os.makedirs("Photos_of_Users/User_" + str(count))
+                DBHelper.download_user_photo("User_" + str(count) + "/" + str(x) + ".jpg")
     except:
         print("No Users are registered.")
     count = 0
     try:
         for user in users.each():
             count = +1
-            DBHelper.download_thief_photo("user" + str(count) + "_" + str(1) + ".jpg")
-            DBHelper.download_thief_photo("user" + str(count) + "_" + str(2) + ".jpg")
-            DBHelper.download_thief_photo("user" + str(count) + "_" + str(3) + ".jpg")
-            DBHelper.download_thief_photo("user" + str(count) + "_" + str(4) + ".jpg")
-            DBHelper.download_thief_photo("user" + str(count) + "_" + str(5) + ".jpg")
-            DBHelper.download_thief_photo("user" + str(count) + "_" + str(6) + ".jpg")
-            DBHelper.download_thief_photo("user" + str(count) + "_" + str(7) + ".jpg")
+            for x in range(20):
+                if not os.path.isdir("Photos_of_Thieves/Thief_" + str(count)):
+                    os.makedirs("Photos_of_Thieves/Thief_" + str(count))
+                DBHelper.download_thief_photo("Thief_" + str(count) + "/" + str(x) + ".jpg")
     except:
-        return 0
+        print("No Thieves for now.")
+    Facial_Recognition_Wrapper.training_recognizer("Fisher")
+    Facial_Recognition_Wrapper.face_recognition_inference("Fisher")
 
-
-start()

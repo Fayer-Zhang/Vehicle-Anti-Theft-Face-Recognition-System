@@ -99,24 +99,24 @@ def get_address(user_id):
     return address
 
 
-# Uploads the photo of user, input should be something like "example.png"
+# Uploads the photos of user, input should be something like "example.jpg"
 def upload_user_photo(user_id):
     storage.child("Photos_of_Users/" + user_id).put("Facial_images/face_rec/train/" + user_id)
 
 
-# Uploads the photo of thief, input should be something like "example.png"
+# Uploads the photos of thief, input should be something like "example.jpg"
 def upload_thief_photo(thief_id):
     storage.child("Photos_of_Thieves/" + thief_id).put("Facial_images/face_rec/train/" + thief_id)
 
 
-# Downloads the specified user photo.
-def download_user_photo(user_photo):
-    storage.child("Photos_of_Users/" + str(user_photo)).download("Users_from_Database/" + str(user_photo))
+# Downloads the specified user's photos, input should be something like "example.jpg"
+def download_user_photo(user_id):
+    storage.child("Photos_of_Users/" + user_id).download("Facial_images/face_rec/train/" + user_id)
 
 
-# Downloads the specified thief photo.
-def download_thief_photo(user_photo):
-    storage.child("Photos_of_Thieves/" + str(user_photo)).download("Thieves_from_Database/" + str(user_photo))
+# Downloads the specified thief's photos, input should be something like "example.jpg"
+def download_thief_photo(thief_id):
+    storage.child("Photos_of_Thieves/" + thief_id).download("Photos_of_Thieves/" + thief_id)
 
 
 # Deletes photo of the specified user.
