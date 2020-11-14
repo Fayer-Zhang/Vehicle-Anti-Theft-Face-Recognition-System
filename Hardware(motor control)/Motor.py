@@ -67,7 +67,7 @@ class Motor:
         elif userStop=="N":
             return False
         else:
-            stop_motor(self)
+            self.stop_motor(self)
             
     
     def start_alarm(self):

@@ -100,13 +100,13 @@ def get_address(user_id):
 
 
 # Uploads the photo of user, input should be something like "example.png"
-def upload_user_photo(user_photo):
-    storage.child("Photos_of_Users/" + user_photo).put("Photos_of_Users/" + user_photo)
+def upload_user_photo(user_id):
+    storage.child("Photos_of_Users/" + user_id).put("Facial_images/face_rec/train/" + user_id)
 
 
 # Uploads the photo of thief, input should be something like "example.png"
-def upload_thief_photo(user_photo):
-    storage.child("Photos_of_Thieves/" + user_photo).put("Photos_of_Thieves/" + user_photo)
+def upload_thief_photo(thief_id):
+    storage.child("Photos_of_Thieves/" + thief_id).put("Facial_images/face_rec/train/" + thief_id)
 
 
 # Downloads the specified user photo.
@@ -127,3 +127,5 @@ def delete_user_photo(user_photo):
 # Deletes photo of the specified thief.
 def delete_thief_photo(user_photo):
     storage.delete('Photos_of_Thieves/' + user_photo)
+
+upload_data("1", "Batuhan", "Basoglu", "bbaso079@uottawa.ca", "6138072241", "257 Lisgar Street")
