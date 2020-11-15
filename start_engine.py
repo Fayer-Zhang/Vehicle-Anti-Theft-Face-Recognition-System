@@ -7,6 +7,7 @@ def start():
     # Downloads all the user and thief photos from database to the project folder first or updates them.
     count = 0
     users = DBHelper.db.child("Users").get()
+    thieves = DBHelper.db.child("Thieves").get()
     try:
         for user in users.each():
             count += 1
@@ -18,7 +19,7 @@ def start():
         print("No Users are registered.")
     count = 0
     try:
-        for user in users.each():
+        for thief in thieves.each():
             count += 1
             if not os.path.isdir("Photos_of_Thieves/Thief_" + str(count)):
                 os.makedirs("Photos_of_Thieves/Thief_" + str(count))
@@ -28,3 +29,5 @@ def start():
         print("No Thieves for now.")
     Facial_Recognition_Wrapper.training_recognizer("Fisher")
     Facial_Recognition_Wrapper.face_recognition_inference("Fisher")
+
+start()
