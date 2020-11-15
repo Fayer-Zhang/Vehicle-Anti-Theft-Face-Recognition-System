@@ -9,7 +9,7 @@ def start():
     users = DBHelper.db.child("Users").get()
     try:
         for x in users.each():
-            count = +1
+            count += 1
             for y in range(20):
                 if not os.path.isdir("Facial_images/face_rec/train/User_" + str(count)):
                     os.makedirs("Photos_of_Users/User_" + str(count))
@@ -19,7 +19,7 @@ def start():
     count = 0
     try:
         for x in users.each():
-            count = +1
+            count += 1
             for y in range(20):
                 if not os.path.isdir("Photos_of_Thieves/Thief_" + str(count)):
                     os.makedirs("Photos_of_Thieves/Thief_" + str(count))
