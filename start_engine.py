@@ -29,5 +29,3 @@ def start():
         print("No Thieves for now.")
     Facial_Recognition_Wrapper.training_recognizer("Fisher")
     Facial_Recognition_Wrapper.face_recognition_inference("Fisher")
-
-start()
