@@ -7,7 +7,8 @@ import numpy as np
 import Facial_Recognition_Render as fr
 import _pickle as cPickle
 import glob
-'import Hardware.Motor' #Line 225-228
+
+'import Hardware.Motor'  # Line 225-228
 
 faceWidth = 320
 faceHeight = 320
@@ -172,13 +173,13 @@ def face_recognition_inference(rec_type):
     print(sys.path[0])
     landmarkDetector = dlib.shape_predictor(sys.path[0] + '/Facial_models/shape_predictor_68_face_landmarks.dat')
 
-    if (rec_type == 'LBPH'):
+    if rec_type == 'LBPH':
         faceRecognizer = cv2.face.LBPHFaceRecognizer_create()
         print("Test using LBPH Faces")
-    elif (rec_type == 'Eigen'):
+    elif rec_type == 'Eigen':
         faceRecognizer = cv2.face.EigenFaceRecognizer_create()
         print("Test using Eigen Faces")
-    elif (rec_type == 'Fisher'):
+    elif rec_type == 'Fisher':
         faceRecognizer = cv2.face.FisherFaceRecognizer_create()
         print("Test using Fisher Faces")
 
@@ -187,7 +188,7 @@ def face_recognition_inference(rec_type):
 
     cam = cv2.VideoCapture(0)
 
-    while (True):
+    while True:
         # imagePath = testFiles[i]
         success, original = cam.read()
         im = cv2.resize(original, (640, 480))
@@ -222,7 +223,7 @@ def face_recognition_inference(rec_type):
             text = '{} {}%'.format(labelsMap[predictedLabel], round(score, 5))
             cv2.rectangle(original, (x1, y1), (x2, y2), (0, 255, 0), 5)
             cv2.putText(original, text, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 3)
-            'Hardware.Motor.Motor.stop_motor()'
+            'Hardware.Motor.Motor.stop_alarm()'
             'Hardware.Motor.Motor.start_motor()'
         'Hardware.Motor.Motor.stop_motor()'
         'Hardware.Motor.Motor.start_alarm()'
@@ -241,7 +242,7 @@ if __name__ == "__main__":
 
     if mode == 'train':
         training_recognizer(rec_type)
-    elif (mode == 'test'):
+    elif mode == 'test':
         face_recognition_inference(rec_type)
 
     # video process (keep it in case if needed)
