@@ -8,6 +8,7 @@ def start():
     count = 0
     users = DBHelper.db.child("Users").get()
     thieves = DBHelper.db.child("Thieves").get()
+    print("Checking and updating User photos...")
     try:
         for user in users.each():
             count += 1
@@ -15,9 +16,11 @@ def start():
                 os.makedirs("Facial_images/face_rec/train/User_" + str(count))
             for i in range(20):
                 DBHelper.download_user_photo("User_" + str(count) + "/" + str(i) + ".jpg")
+        print("Success.")
     except:
         print("No Users are registered.")
     count = 0
+    print("Checking and updating Thief photos...")
     try:
         for thief in thieves.each():
             count += 1
@@ -25,7 +28,8 @@ def start():
                 os.makedirs("Photos_of_Thieves/Thief_" + str(count))
             for i in range(20):
                 DBHelper.download_thief_photo("Thief_" + str(count) + "/" + str(i) + ".jpg")
+        print("Success.")
     except:
-        print("No Thieves for now.")
+        print("No Thieves are registered.")
     Facial_Recognition_Wrapper.training_recognizer("Fisher")
     Facial_Recognition_Wrapper.face_recognition_inference("Fisher")
