@@ -5,6 +5,7 @@ import Facial_Recognition_Wrapper
 
 def start():
     # Downloads all the user and thief photos from database to the project folder first or updates them.
+    # Then it starts Facial Recognition Software.
     count = 0
     users = DBHelper.db.child("Users").get()
     thieves = DBHelper.db.child("Thieves").get()
