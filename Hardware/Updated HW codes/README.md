@@ -5,8 +5,8 @@ motor, alarm tests are completed,
 
 functionalities work perfectly without errors
 
-expected objections achieved: by changing real-time signals on Firebase, embedded system can be controlled properly 
-                              turn on/off motor/alarm
+expected objectives achieved: by changing real-time signals on Firebase, the embedded system can be controlled properly 
+                              ;turn on/off motor/alarm
                               
 physical button tests are planned to be completed soon......
 
