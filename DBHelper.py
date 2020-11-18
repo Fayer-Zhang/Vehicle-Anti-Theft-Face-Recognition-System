@@ -117,8 +117,7 @@ def get_motor():
 
 # Motor signal setter
 def set_motor(motor):
-    data = {"motor": motor}
-    db.child("signal").child("1").set(data)
+    db.child("signal").child("1").child("motor").set(motor)
 
 
 # Alarm signal getter
@@ -129,8 +128,7 @@ def get_alarm():
 
 # Alarm signal setter
 def set_alarm(alarm):
-    data = {"alarm": alarm}
-    db.child("signal").child("1").set(data)
+    db.child("signal").child("1").child("alarm").set(alarm)
 
 
 # Power signal getter
@@ -141,8 +139,7 @@ def get_power():
 
 # Power signal setter
 def set_power(power):
-    data = {"power": power}
-    db.child("signal").child("1").set(data)
+    db.child("signal").child("1").child("power").set(power)
 
 
 # Returns the first name or else an empty string.
@@ -176,7 +173,7 @@ def get_signal_address():
 
 
 # Uploads the data of user input into firebase.
-def upload_signal_data(user_id, firstname, lastname, email, phone, address):
+def upload_signal_data(firstname, lastname, email, phone, address):
     data = {"First Name": firstname, "Last Name": lastname, "E-Mail": email, "Phone": phone, "Address": address}
     db.child("signal").child("2").set(data)
 
@@ -184,3 +181,7 @@ def upload_signal_data(user_id, firstname, lastname, email, phone, address):
 # Removes the inputs.
 def reset_data():
     db.child("signal").child("2").remove()
+
+
+if __name__ == "__main__":
+    upload_signal_data("Joe", "Joestar", "Jojo@gmail.com", "6353453242", "JojoLand")

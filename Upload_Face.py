@@ -6,9 +6,9 @@ def upload_your_face(firstname, lastname, email, phone, address):
     # Determines user ID before adding the data to the database.
     # User ID is determined from number of user dataset in database
     # Later on it starts face recognition system and uploads it into the database based on the given user ID.
-    count = 0
     users = DBHelper.db.child("Users").get()
     try:
+        count = 1
         for user in users.each():
             count += 1
         DBHelper.upload_data("User_" + str(count), firstname, lastname, email, phone, address)

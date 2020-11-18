@@ -8,7 +8,7 @@ import Facial_Recognition_Render as fr
 import _pickle as cPickle
 import glob
 import DBHelper
-import Hardware.Updated_HW_codes.NewMotorFunc # Line 225-228
+import Hardware.Updated_HW_codes.NewMotorFunc  # Line 225-228
 
 faceWidth = 320
 faceHeight = 320

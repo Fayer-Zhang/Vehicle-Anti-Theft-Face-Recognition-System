@@ -6,11 +6,11 @@ import Facial_Recognition_Wrapper
 def start():
     # Downloads all the user and thief photos from database to the project folder first or updates them.
     # Then it starts Facial Recognition Software.
-    count = 0
     users = DBHelper.db.child("Users").get()
     thieves = DBHelper.db.child("Thieves").get()
     print("Checking and updating User photos...")
     try:
+        count = 0
         for user in users.each():
             count += 1
             if not os.path.isdir("Facial_images/face_rec/train/User_" + str(count)):
