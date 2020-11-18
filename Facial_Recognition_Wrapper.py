@@ -7,8 +7,8 @@ import numpy as np
 import Facial_Recognition_Render as fr
 import _pickle as cPickle
 import glob
-
-'import Hardware.Motor'  # Line 225-228
+import DBHelper
+import Hardware.Updated_HW_codes.NewMotorFunc # Line 225-228
 
 faceWidth = 320
 faceHeight = 320
@@ -223,10 +223,10 @@ def face_recognition_inference(rec_type):
             text = '{} {}%'.format(labelsMap[predictedLabel], round(score, 5))
             cv2.rectangle(original, (x1, y1), (x2, y2), (0, 255, 0), 5)
             cv2.putText(original, text, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 3)
-            'Hardware.Motor.Motor.stop_alarm()'
-            'Hardware.Motor.Motor.start_motor()'
-        'Hardware.Motor.Motor.stop_motor()'
-        'Hardware.Motor.Motor.start_alarm()'
+            DBHelper.set_motor("on")
+            Hardware.Updated_HW_codes.NewMotorFunc.Motor.start_motor()
+        DBHelper.set_alarm("on")
+        Hardware.Updated_HW_codes.NewMotorFunc.Motor.start_alarm()
 
         cv2.imshow('Face Recognition Demo', original)
 

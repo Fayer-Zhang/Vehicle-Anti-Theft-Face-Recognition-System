@@ -34,3 +34,7 @@ def start():
         print("No Thieves are registered.")
     Facial_Recognition_Wrapper.training_recognizer("Fisher")
     Facial_Recognition_Wrapper.face_recognition_inference("Fisher")
+
+
+if __name__ == "__main__":
+    start()

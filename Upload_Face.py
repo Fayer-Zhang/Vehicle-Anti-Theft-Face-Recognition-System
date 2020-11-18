@@ -20,3 +20,12 @@ def upload_your_face(firstname, lastname, email, phone, address):
         Facial_Recognition_Registration.register_your_face("User_1")
         for x in range(20):
             DBHelper.upload_user_photo("User_1/" + str(x) + ".jpg")
+
+
+if __name__ == "__main__":
+    f = input('Enter your First Name:')
+    l = input('Enter your Last Name:')
+    e = input('Enter your E-Mail:')
+    p = input('Enter your Phone:')
+    a = input('Enter your Address:')
+    upload_your_face(f, l, e, p, a)

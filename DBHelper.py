@@ -51,51 +51,31 @@ def remove_data(user_id):
 
 # Returns the first name or else an empty string.
 def get_firstname(user_id):
-    firstname = ""
-    users = db.child("Users").get()
-    for user in users.each():
-        if user.key() == user_id:
-            firstname = user.val()["First Name"]
+    firstname = db.child("Users").child(str(user_id)).child("First Name").get().val()
     return firstname
 
 
 # Returns the last name or else an empty string.
 def get_lastname(user_id):
-    lastname = ""
-    users = db.child("Users").get()
-    for user in users.each():
-        if user.key() == user_id:
-            lastname = user.val()["Last Name"]
+    lastname = db.child("Users").child(str(user_id)).child("Last Name").get().val()
     return lastname
 
 
 # Returns the e-mail or else an empty string.
 def get_email(user_id):
-    email = ""
-    users = db.child("Users").get()
-    for user in users.each():
-        if user.key() == user_id:
-            email = user.val()["E-Mail"]
+    email = db.child("Users").child(str(user_id)).child("E-Mail").get().val()
     return email
 
 
 # Returns the phone or else an empty string.
 def get_phone(user_id):
-    phone = ""
-    users = db.child("Users").get()
-    for user in users.each():
-        if user.key() == user_id:
-            phone = user.val()["Phone"]
+    phone = db.child("Users").child(str(user_id)).child("Phone").get().val()
     return phone
 
 
 # Returns the address or else an empty string.
 def get_address(user_id):
-    address = ""
-    users = db.child("Users").get()
-    for user in users.each():
-        if user.key() == user_id:
-            address = user.val()["Address"]
+    address = db.child("Users").child(str(user_id)).child("Address").get().val()
     return address
 
 
@@ -127,3 +107,39 @@ def delete_user_photo(user_photo):
 # Deletes photo of the specified thief.
 def delete_thief_photo(user_photo):
     storage.delete('Photos_of_Thieves/' + user_photo)
+
+
+# Motor signal getter
+def get_motor():
+    motor = db.child("signal").child("1").child("motor").get().val()
+    return motor
+
+
+# Motor signal setter
+def set_motor(motor):
+    data = {"motor": motor}
+    db.child("signal").child("1").set(data)
+
+
+# Alarm signal getter
+def get_alarm():
+    alarm = db.child("signal").child("1").child("alarm").get().val()
+    return alarm
+
+
+# Alarm signal setter
+def set_alarm(alarm):
+    data = {"alarm": alarm}
+    db.child("signal").child("1").set(data)
+
+
+# Power signal getter
+def get_power():
+    alarm = db.child("signal").child("1").child("power").get().val()
+    return alarm
+
+
+# Power signal setter
+def set_power(power):
+    data = {"power": power}
+    db.child("signal").child("1").set(data)
