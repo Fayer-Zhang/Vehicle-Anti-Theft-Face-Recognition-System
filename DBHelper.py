@@ -38,13 +38,13 @@ def login(username, password):
         print("Invalid username or password.")
 
 
-# Uploads the data of specified user uploaded into firebase.
+# Uploads the data of specified user into firebase.
 def upload_data(user_id, firstname, lastname, email, phone, address):
     data = {"First Name": firstname, "Last Name": lastname, "E-Mail": email, "Phone": phone, "Address": address}
     db.child("Users").child(user_id).set(data)
 
 
-# Removes the data of specified user uploaded into firebase.
+# Removes the data of specified user from firebase.
 def remove_data(user_id):
     db.child("Users").child(user_id).remove()
 
@@ -143,3 +143,44 @@ def get_power():
 def set_power(power):
     data = {"power": power}
     db.child("signal").child("1").set(data)
+
+
+# Returns the first name or else an empty string.
+def get_signal_firstname():
+    firstname = db.child("signal").child("2").child("First Name").get().val()
+    return firstname
+
+
+# Returns the last name or else an empty string.
+def get_signal_lastname():
+    lastname = db.child("signal").child("2").child("Last Name").get().val()
+    return lastname
+
+
+# Returns the e-mail or else an empty string.
+def get_signal_email():
+    email = db.child("signal").child("2").child("E-Mail").get().val()
+    return email
+
+
+# Returns the phone or else an empty string.
+def get_signal_phone():
+    phone = db.child("signal").child("2").child("Phone").get().val()
+    return phone
+
+
+# Returns the address or else an empty string.
+def get_signal_address():
+    address = db.child("signal").child("2").child("Address").get().val()
+    return address
+
+
+# Uploads the data of user input into firebase.
+def upload_signal_data(user_id, firstname, lastname, email, phone, address):
+    data = {"First Name": firstname, "Last Name": lastname, "E-Mail": email, "Phone": phone, "Address": address}
+    db.child("signal").child("2").set(data)
+
+
+# Removes the inputs.
+def reset_data():
+    db.child("signal").child("2").remove()

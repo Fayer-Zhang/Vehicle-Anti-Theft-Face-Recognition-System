@@ -188,7 +188,7 @@ def face_recognition_inference(rec_type):
 
     cam = cv2.VideoCapture(0)
 
-    while True:
+    while DBHelper.get_power() == "on":
         # imagePath = testFiles[i]
         success, original = cam.read()
         im = cv2.resize(original, (640, 480))
