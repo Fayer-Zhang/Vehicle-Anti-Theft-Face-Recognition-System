@@ -1,13 +1,12 @@
 import DBHelper
-
-import Start_Engine
+'import Start_Engine'
 import Upload_Face
 
 if __name__ == "__main__":
     print("Starting the Program.")
     while True:
         if DBHelper.get_power() == "on":
-            Start_Engine.start()
+            'Start_Engine.start()'
 
         if None not in (DBHelper.get_signal_firstname(),
                         DBHelper.get_signal_lastname(),
