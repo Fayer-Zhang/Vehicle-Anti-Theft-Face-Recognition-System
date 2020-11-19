@@ -63,7 +63,7 @@ class Motor:
         
         database = self.firebase.database() # get alarm on/off signal from firebase
         signals = database.child("signal")
-        motorSignal = signals.child("power").get().val()
+        motorSignal = signals.child("motor").get().val()
         
         
         if (motorSignal=="off") or (not GPIO.input(13)):
