@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/background">
+
+    <EditText
+        android:id="@+id/fname"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/loginedittext"
+        android:textColorHint="#ffffff"
+        android:hint="First Name"
+        android:paddingLeft="10dp"/>
+
+    <EditText
+        android:id="@+id/lname"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColorHint="#ffffff"
+        android:hint="Last Name"
+        android:background="@drawable/loginedittext"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="60dp"/>
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/loginedittext"
+        android:textColorHint="#ffffff"
+        android:paddingLeft="10dp"
+        android:hint="Phone Number" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/loginedittext"
+        android:textColorHint="#ffffff"
+        android:paddingLeft="10dp"
+        android:hint="Email" />
+
+
+
+
+</RelativeLayout>

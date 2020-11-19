@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "163692530359",
+    "firebase_url": "https://vehicleantitheftrecognition.firebaseio.com",
+    "project_id": "vehicleantitheftrecognition",
+    "storage_bucket": "vehicleantitheftrecognition.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163692530359:android:0049aa52a82795ddb11b32",
+        "android_client_info": {
+          "package_name": "com.example.capstone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163692530359-vrj530ufkv3dfn7cq82eu2r7esl57u2n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.capstone",
+            "certificate_hash": "84547ce3747c8835693face9108264eb12266233"
+          }
+        },
+        {
+          "client_id": "163692530359-biolija9122hala87ntdpj9l9r66uvrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQuLzuXTr0OHn0Cr_R7zdXRTqAdl0VPaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163692530359-biolija9122hala87ntdpj9l9r66uvrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

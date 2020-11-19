@@ -1,4 +1,4 @@
-mport RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import pyrebase          # u need to install Pyrebase module firstly
 from time import sleep
 
@@ -114,7 +114,7 @@ class Motor:
             return False
 
         
-if _name__=="__main_":
+if __name__=="__main__":
         
     #print("Execute function...")
         

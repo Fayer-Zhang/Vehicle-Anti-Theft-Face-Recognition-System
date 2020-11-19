@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.capstone">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".homepage"></activity>
+        <activity android:name=".add"></activity>
+        <activity android:name=".About" />
+        <activity android:name=".Support" />
+        <activity android:name=".Password" />
+        <activity android:name=".Enrollment" />
+        <activity android:name=".Drivers" />
+        <activity android:name=".Settings" />
+        <activity android:name=".signup" />
+        <activity android:name=".Login" />
+        <activity android:name=".homepage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -111,71 +111,71 @@ def delete_thief_photo(user_photo):
 
 # Motor signal getter
 def get_motor():
-    motor = db.child("signal").child("motor").get().val()
+    motor = db.child("signal").child("1").child("motor").get().val()
     return motor
 
 
 # Motor signal setter
 def set_motor(motor):
-    db.child("signal").child("motor").set(motor)
+    db.child("signal").child("1").child("motor").set(motor)
 
 
 # Alarm signal getter
 def get_alarm():
-    alarm = db.child("signal").child("alarm").get().val()
+    alarm = db.child("signal").child("1").child("alarm").get().val()
     return alarm
 
 
 # Alarm signal setter
 def set_alarm(alarm):
-    db.child("signal").child("alarm").set(alarm)
+    db.child("signal").child("1").child("alarm").set(alarm)
 
 
 # Power signal getter
 def get_power():
-    alarm = db.child("signal").child("power").get().val()
+    alarm = db.child("signal").child("1").child("power").get().val()
     return alarm
 
 
 # Power signal setter
 def set_power(power):
-    db.child("signal").child("power").set(power)
+    db.child("signal").child("1").child("power").set(power)
 
 
 # Returns the first name or else an empty string.
 def get_signal_firstname():
-    firstname = db.child("signal_2").child("First Name").get().val()
+    firstname = db.child("signal").child("2").child("First Name").get().val()
     return firstname
 
 
 # Returns the last name or else an empty string.
 def get_signal_lastname():
-    lastname = db.child("signal_2").child("Last Name").get().val()
+    lastname = db.child("signal").child("2").child("Last Name").get().val()
     return lastname
 
 
 # Returns the e-mail or else an empty string.
 def get_signal_email():
-    email = db.child("signal_2").child("E-Mail").get().val()
+    email = db.child("signal").child("2").child("E-Mail").get().val()
     return email
 
 
 # Returns the phone or else an empty string.
 def get_signal_phone():
-    phone = db.child("signal_2").child("Phone").get().val()
+    phone = db.child("signal").child("2").child("Phone").get().val()
     return phone
 
 
 # Returns the address or else an empty string.
 def get_signal_address():
-    address = db.child("signal_2").child("Address").get().val()
+    address = db.child("signal").child("2").child("Address").get().val()
     return address
 
 
 # Uploads the data of user input into firebase.
 def upload_signal_data(firstname, lastname, email, phone, address):
     data = {"First Name": firstname, "Last Name": lastname, "E-Mail": email, "Phone": phone, "Address": address}
-    db.child("signal_2").set(data)
+    db.child("signal").child("2").set(data)
 
 
 # Removes the inputs.
@@ -184,4 +184,4 @@ def reset_data():
 
 
 if __name__ == "__main__":
-    upload_signal_data("Joe", "Joestar", "Jojo@gmail.com", "6353453242", "JojoLand")
+    upload_signal_data("Batuhan", "Başoğlu", "bbaso079@uottawa.ca", "6138072241", "257 Lisgar Street")

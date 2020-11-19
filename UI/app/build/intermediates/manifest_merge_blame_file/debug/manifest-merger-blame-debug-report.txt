@@ -5,46 +5,255 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="15"
+8        android:minSdkVersion="17"
 8-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
 9-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
 10
-11    <application
-11-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:5:5-20:19
-12        android:allowBackup="true"
-12-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.0.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\8f8ab13dc8f4e84e14a8bb3d9ac92bc4\core-1.0.1\AndroidManifest.xml:22:18-86
-14        android:debuggable="true"
-15        android:icon="@mipmap/ic_launcher"
-15-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:7:9-43
-16        android:label="@string/app_name"
-16-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:8:9-41
-17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:9:9-54
-18        android:supportsRtl="true"
-18-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:10:9-35
-19        android:testOnly="true"
-20        android:theme="@style/AppTheme" >
-20-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:11:9-40
-21        <activity android:name="com.example.capstone.homepage" />
-21-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:12:9-55
-21-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:12:19-43
-22        <activity android:name="com.example.capstone.MainActivity" >
-22-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:13:9-19:20
-22-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:13:19-47
-23            <intent-filter>
-23-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:14:13-18:29
-24                <action android:name="android.intent.action.MAIN" />
-24-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:15:17-69
-24-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:15:25-66
-25
-26                <category android:name="android.intent.category.LAUNCHER" />
-26-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:17:17-77
-26-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:17:27-74
-27            </intent-filter>
-28        </activity>
-29    </application>
-30
-31</manifest>
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:5:5-67
+11-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+12-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:6:5-80
+12-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:6:22-77
+13
+14    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+15    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->[com.google.firebase:firebase-database:19.5.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:25:5-79
+16-->[com.google.firebase:firebase-database:19.5.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:25:22-76
+17
+18    <application
+18-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:8:5-32:19
+19        android:name="androidx.multidex.MultiDexApplication"
+20        android:allowBackup="true"
+20-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:9:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.1.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\33905501977a28c0fc6a2935607f48a6\core-1.1.0\AndroidManifest.xml:24:18-86
+22        android:debuggable="true"
+23        android:icon="@mipmap/ic_launcher"
+23-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:10:9-43
+24        android:label="@string/app_name"
+24-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:11:9-41
+25        android:roundIcon="@mipmap/ic_launcher_round"
+25-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:12:9-54
+26        android:supportsRtl="true"
+26-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:13:9-35
+27        android:testOnly="true"
+28        android:theme="@style/AppTheme" >
+28-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:14:9-40
+29        <activity android:name="com.example.capstone.add" />
+29-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:15:9-50
+29-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:15:19-38
+30        <activity android:name="com.example.capstone.About" />
+30-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:16:9-43
+30-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:16:19-40
+31        <activity android:name="com.example.capstone.Support" />
+31-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:17:9-45
+31-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:17:19-42
+32        <activity android:name="com.example.capstone.Password" />
+32-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:18:9-46
+32-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:18:19-43
+33        <activity android:name="com.example.capstone.Enrollment" />
+33-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:19:9-48
+33-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:19:19-45
+34        <activity android:name="com.example.capstone.Drivers" />
+34-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:20:9-45
+34-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:20:19-42
+35        <activity android:name="com.example.capstone.Settings" />
+35-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:21:9-46
+35-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:21:19-43
+36        <activity android:name="com.example.capstone.signup" />
+36-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:22:9-44
+36-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:22:19-41
+37        <activity android:name="com.example.capstone.Login" />
+37-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:23:9-43
+37-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:23:19-40
+38        <activity android:name="com.example.capstone.homepage" />
+38-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:24:9-46
+38-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:24:19-43
+39        <activity android:name="com.example.capstone.MainActivity" >
+39-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:25:9-31:20
+39-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:25:19-47
+40            <intent-filter>
+40-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:26:13-30:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:27:17-69
+41-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:27:25-66
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:29:17-77
+43-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:29:27-74
+44            </intent-filter>
+45        </activity>
+46
+47        <service
+47-->[com.google.firebase:firebase-database:19.5.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:29:9-35:19
+48            android:name="com.google.firebase.components.ComponentDiscoveryService"
+48-->[com.google.firebase:firebase-database:19.5.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:30:13-84
+49            android:directBootAware="true"
+49-->[com.google.firebase:firebase-common:19.3.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\b0490454e848f18b90eb9fd352d0729e\jetified-firebase-common-19.3.1\AndroidManifest.xml:35:13-43
+50            android:exported="false" >
+50-->[com.google.firebase:firebase-database:19.5.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:31:13-37
+51            <meta-data
+51-->[com.google.firebase:firebase-database:19.5.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:32:13-34:85
+52                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+52-->[com.google.firebase:firebase-database:19.5.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:33:17-109
+53                android:value="com.google.firebase.components.ComponentRegistrar" />
+53-->[com.google.firebase:firebase-database:19.5.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:34:17-82
+54            <meta-data
+54-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:85:13-87:85
+55                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+55-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:86:17-109
+56                android:value="com.google.firebase.components.ComponentRegistrar" />
+56-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:87:17-82
+57            <meta-data
+57-->[com.google.firebase:firebase-firestore:22.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\181a25fb8339fec78a7754b58f1acc2e\jetified-firebase-firestore-22.0.0\AndroidManifest.xml:20:13-22:85
+58                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+58-->[com.google.firebase:firebase-firestore:22.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\181a25fb8339fec78a7754b58f1acc2e\jetified-firebase-firestore-22.0.0\AndroidManifest.xml:21:17-111
+59                android:value="com.google.firebase.components.ComponentRegistrar" />
+59-->[com.google.firebase:firebase-firestore:22.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\181a25fb8339fec78a7754b58f1acc2e\jetified-firebase-firestore-22.0.0\AndroidManifest.xml:22:17-82
+60            <meta-data
+60-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:33:13-35:85
+61                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+61-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:34:17-107
+62                android:value="com.google.firebase.components.ComponentRegistrar" />
+62-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\c7fc17e1e32ad03dc7f5ffdd51901eb8\jetified-firebase-storage-19.2.0\AndroidManifest.xml:35:17-82
+63        </service>
+64
+65        <activity
+65-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:27:9-34:50
+66            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+66-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:28:13-85
+67            android:excludeFromRecents="true"
+67-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:29:13-46
+68            android:exported="true"
+68-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:30:13-36
+69            android:launchMode="singleTask"
+69-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:31:13-44
+70            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+70-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:32:13-102
+71            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+71-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:33:13-72
+72        <activity
+72-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:35:9-52:20
+73            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+73-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:36:13-80
+74            android:excludeFromRecents="true"
+74-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:37:13-46
+75            android:exported="true"
+75-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:38:13-36
+76            android:launchMode="singleTask"
+76-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:39:13-44
+77            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+77-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:40:13-72
+78            <intent-filter>
+78-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:41:13-51:29
+79                <action android:name="android.intent.action.VIEW" />
+79-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:42:17-69
+79-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:42:25-66
+80
+81                <category android:name="android.intent.category.DEFAULT" />
+81-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:44:17-76
+81-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:44:27-73
+82                <category android:name="android.intent.category.BROWSABLE" />
+82-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:45:17-78
+82-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:45:27-75
+83
+84                <data
+84-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:47:17-50:51
+85                    android:host="firebase.auth"
+85-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:48:21-49
+86                    android:path="/"
+86-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:49:21-37
+87                    android:scheme="genericidp" />
+87-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:50:21-48
+88            </intent-filter>
+89        </activity>
+90        <activity
+90-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:53:9-70:20
+91            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+91-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:54:13-79
+92            android:excludeFromRecents="true"
+92-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:55:13-46
+93            android:exported="true"
+93-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:56:13-36
+94            android:launchMode="singleTask"
+94-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:57:13-44
+95            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+95-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:58:13-72
+96            <intent-filter>
+96-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:59:13-69:29
+97                <action android:name="android.intent.action.VIEW" />
+97-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:42:17-69
+97-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:42:25-66
+98
+99                <category android:name="android.intent.category.DEFAULT" />
+99-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:44:17-76
+99-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:44:27-73
+100                <category android:name="android.intent.category.BROWSABLE" />
+100-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:45:17-78
+100-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:45:27-75
+101
+102                <data
+102-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:47:17-50:51
+103                    android:host="firebase.auth"
+103-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:48:21-49
+104                    android:path="/"
+104-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:49:21-37
+105                    android:scheme="recaptcha" />
+105-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:50:21-48
+106            </intent-filter>
+107        </activity>
+108
+109        <service
+109-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:72:9-81:19
+110            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+110-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:73:13-101
+111            android:enabled="true"
+111-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:74:13-35
+112            android:exported="false" >
+112-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:75:13-37
+113            <intent-filter>
+113-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:76:13-80:29
+114                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+114-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:77:17-89
+114-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:77:25-86
+115
+116                <category android:name="android.intent.category.DEFAULT" />
+116-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:44:17-76
+116-->[com.google.firebase:firebase-auth:20.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\f09d091f81b212e5d890a8fd7ee1b65f\jetified-firebase-auth-20.0.0\AndroidManifest.xml:44:27-73
+117            </intent-filter>
+118        </service>
+119
+120        <activity
+120-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\18b63455f7cdf2e55499d904fd0b4a4d\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+121            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+121-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\18b63455f7cdf2e55499d904fd0b4a4d\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+122            android:exported="false"
+122-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\18b63455f7cdf2e55499d904fd0b4a4d\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+123            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+123-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\18b63455f7cdf2e55499d904fd0b4a4d\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+124
+125        <provider
+125-->[com.google.firebase:firebase-common:19.3.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\b0490454e848f18b90eb9fd352d0729e\jetified-firebase-common-19.3.1\AndroidManifest.xml:26:9-31:39
+126            android:name="com.google.firebase.provider.FirebaseInitProvider"
+126-->[com.google.firebase:firebase-common:19.3.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\b0490454e848f18b90eb9fd352d0729e\jetified-firebase-common-19.3.1\AndroidManifest.xml:27:13-77
+127            android:authorities="com.example.capstone.firebaseinitprovider"
+127-->[com.google.firebase:firebase-common:19.3.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\b0490454e848f18b90eb9fd352d0729e\jetified-firebase-common-19.3.1\AndroidManifest.xml:28:13-72
+128            android:directBootAware="true"
+128-->[com.google.firebase:firebase-common:19.3.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\b0490454e848f18b90eb9fd352d0729e\jetified-firebase-common-19.3.1\AndroidManifest.xml:29:13-43
+129            android:exported="false"
+129-->[com.google.firebase:firebase-common:19.3.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\b0490454e848f18b90eb9fd352d0729e\jetified-firebase-common-19.3.1\AndroidManifest.xml:30:13-37
+130            android:initOrder="100" />
+130-->[com.google.firebase:firebase-common:19.3.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\b0490454e848f18b90eb9fd352d0729e\jetified-firebase-common-19.3.1\AndroidManifest.xml:31:13-36
+131
+132        <meta-data
+132-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\2a38911dfcd618f6f10b3261ee4a7ed5\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
+133            android:name="com.google.android.gms.version"
+133-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\2a38911dfcd618f6f10b3261ee4a7ed5\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
+134            android:value="@integer/google_play_services_version" />
+134-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\2a38911dfcd618f6f10b3261ee4a7ed5\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
+135    </application>
+136
+137</manifest>
