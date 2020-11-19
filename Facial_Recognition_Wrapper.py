@@ -200,7 +200,7 @@ def face_recognition_inference(rec_type):
         landmarks = fr.getLandmarks(faceDetector, landmarkDetector, im)
         landmarks = np.array(landmarks)
 
-        if len(landmarks) == 68:
+        while len(landmarks) == 68:
             x1Limit = landmarks[0][0] - (landmarks[36][0] - landmarks[0][0])
             x2Limit = landmarks[16][0] + (landmarks[16][0] - landmarks[45][0])
             y1Limit = landmarks[27][1] - 3 * (landmarks[30][1] - landmarks[27][1])
