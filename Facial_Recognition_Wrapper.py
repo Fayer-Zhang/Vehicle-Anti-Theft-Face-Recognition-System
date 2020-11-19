@@ -8,7 +8,6 @@ import Facial_Recognition_Render as fr
 import _pickle as cPickle
 import glob
 import DBHelper
-import Hardware.Updated_HW_codes.NewMotorFunc  # Line 225-228
 
 faceWidth = 320
 faceHeight = 320
@@ -200,7 +199,9 @@ def face_recognition_inference(rec_type):
         landmarks = fr.getLandmarks(faceDetector, landmarkDetector, im)
         landmarks = np.array(landmarks)
 
-        while len(landmarks) == 68:
+        cond = False
+
+        if len(landmarks) == 68:
             x1Limit = landmarks[0][0] - (landmarks[36][0] - landmarks[0][0])
             x2Limit = landmarks[16][0] + (landmarks[16][0] - landmarks[45][0])
             y1Limit = landmarks[27][1] - 3 * (landmarks[30][1] - landmarks[27][1])
@@ -223,22 +224,28 @@ def face_recognition_inference(rec_type):
             text = '{} {}%'.format(labelsMap[predictedLabel], round(score, 5))
             cv2.rectangle(original, (x1, y1), (x2, y2), (0, 255, 0), 5)
             cv2.putText(original, text, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 3)
+            cond = True
+
+        if cond:
             DBHelper.set_motor("on")
-            Hardware.Updated_HW_codes.NewMotorFunc.Motor.start_motor()
-        DBHelper.set_alarm("on")
-        Hardware.Updated_HW_codes.NewMotorFunc.Motor.start_alarm()
+            DBHelper.set_alarm("off")
+        else:
+            DBHelper.set_motor("off")
+            DBHelper.set_alarm("on")
 
         cv2.imshow('Face Recognition Demo', original)
 
         k = cv2.waitKey(10)
 
+    DBHelper.set_alarm("off")
+    DBHelper.set_motor("off")
     cam.release()
     cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
     mode = 'test'
-    rec_type = 'Fisher'  # 'LBPH' 'Fisher' 'Eigen'
+    rec_type = 'LBPH'  # 'LBPH' 'Fisher' 'Eigen'
 
     if mode == 'train':
         training_recognizer(rec_type)

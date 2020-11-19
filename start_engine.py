@@ -32,8 +32,8 @@ def start():
         print("Success.")
     except:
         print("No Thieves are registered.")
-    Facial_Recognition_Wrapper.training_recognizer("Fisher")
-    Facial_Recognition_Wrapper.face_recognition_inference("Fisher")
+    Facial_Recognition_Wrapper.training_recognizer("LBPH")
+    Facial_Recognition_Wrapper.face_recognition_inference("LBPH")
 
 
 if __name__ == "__main__":
