@@ -100,7 +100,8 @@ def training_data_loader():
     labelsMap[-1] = "unknown"
 
     for i, subfolder in enumerate(subfolders):
-        labelsMap[i] = os.path.basename(subfolder)
+        labelsMap[i] = DBHelper.get_firstname(os.path.basename(subfolder)) + "_" + DBHelper.get_lastname(
+            os.path.basename(subfolder))
         for x in os.listdir(subfolder):
             xpath = os.path.join(subfolder, x)
             if x.endswith('jpg') or x.endswith('pgm'):
@@ -200,6 +201,7 @@ def face_recognition_inference(rec_type):
         landmarks = np.array(landmarks)
 
         cond = False
+        cond2 = False
 
         if len(landmarks) == 68:
             x1Limit = landmarks[0][0] - (landmarks[36][0] - landmarks[0][0])
@@ -229,7 +231,7 @@ def face_recognition_inference(rec_type):
         if cond:
             DBHelper.set_motor("on")
             DBHelper.set_alarm("off")
-        else:
+        elif not cond:
             DBHelper.set_motor("off")
             DBHelper.set_alarm("on")
 

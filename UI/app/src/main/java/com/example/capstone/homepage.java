@@ -63,13 +63,11 @@ public class homepage extends AppCompatActivity {
             public void onClick(View v) {
                 if(check == 0){
                     sig.setPower("on");
-                    sig.setMotor("on");
                     e.setImageResource(R.drawable.ic_power_on);
                     et.setText("ON");
                     check = 1;
                 } else {
                     sig.setPower("off");
-                    sig.setMotor("off");
                     e.setImageResource(R.drawable.ic_power_off);
                     et.setText("OFF");
                     check = 0;

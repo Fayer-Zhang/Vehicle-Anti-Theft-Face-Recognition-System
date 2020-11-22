@@ -19,8 +19,7 @@ storage = firebase.storage()
 
 
 # Create account function which creates a new authentication info.
-def create_account(username, password, confirm_password):
-    email = username + "@hotmail.com"
+def create_account(email, password, confirm_password):
     if password == confirm_password:
         auth.create_user_with_email_and_password(email, password)
         print("Account successfully created.")
@@ -29,8 +28,7 @@ def create_account(username, password, confirm_password):
 
 
 # Login function which verifies the given authentication info.
-def login(username, password):
-    email = username + "@hotmail.com"
+def login(email, password):
     try:
         auth.sign_in_with_email_and_password(email, password)
         print("Successfully Logged in.")
@@ -184,4 +182,4 @@ def reset_data():
 
 
 if __name__ == "__main__":
-    upload_signal_data("Batuhan", "Başoğlu", "bbaso079@uottawa.ca", "6138072241", "257 Lisgar Street")
+    upload_signal_data("RandomFirst", "RandomLast", "Random@gmail.com", "0000000000", "Random Address")

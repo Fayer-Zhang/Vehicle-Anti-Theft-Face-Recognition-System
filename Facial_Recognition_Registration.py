@@ -29,4 +29,3 @@ def register_your_face(label):
     cap.release()
     cv2.destroyAllWindows()
 
-
