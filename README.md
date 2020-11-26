@@ -10,6 +10,7 @@ Hardware: Qian Ma, Leyao Li
 
 # Instructions
 
+In order:
 1. Start Hardware/Updated_HW_codes/NewMotorFunc.py for Motor/Alarm functions.
-2. Start Main.py for Face Recognition Software.
+2. Start Main.py for Anti-Theft Face Recognition Software.
 3. Start UI/app from android studio or download the app to your phone for the user interface of the program.
