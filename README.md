@@ -28,4 +28,4 @@ add the file path to the 'service account' if it doesn't work.
 
 # Notes
 
--Code might break if you have your webcam is opened during execution. You have to close the webcam first.
+- Code might break if you have your webcam is opened during execution. You have to close the webcam first.
