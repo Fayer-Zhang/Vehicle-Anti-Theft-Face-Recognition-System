@@ -25,3 +25,7 @@ anaconda command prompt.
     - conda update --all
 - For the vehicleantitheftrecognition-firebase-adminsdk-krrgw-05da515de5.json, in DBHelper.py
 add the file path to the 'service account' if it doesn't work.
+
+# Notes
+
+-Code might break if you have your webcam is opened during execution. You have to close the webcam first.
