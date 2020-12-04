@@ -1,15 +1,3 @@
-# Copyright 2017 BIG VISION LLC ALL RIGHTS RESERVED
-#
-# This code is made available to the students of
-# the online course titled "Computer Vision for Faces"
-# by Satya Mallick for personal non-commercial use.
-#
-# Sharing this code is strictly prohibited without written
-# permission from Big Vision LLC.
-#
-# For licensing and other inquiries, please email
-# spmallick@bigvisionllc.com
-#
 import cv2
 import dlib
 import numpy as np
