@@ -29,3 +29,6 @@ add the file path to the 'service account' if it doesn't work.
 # Notes
 
 - Code might break if you have your webcam is opened during execution. You have to close the webcam first.
+- In order to make Hardware part work, you need to execute the hardware code from Raspberry Pi hardware component we designed. 
+- You can execute the Software and User Interface components from different computers or from the same computer as Raspberry Pi.
+ It is user's choice.
