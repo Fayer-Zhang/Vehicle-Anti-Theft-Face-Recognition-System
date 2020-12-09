@@ -17,6 +17,7 @@ In order:
 
 # System Requirements
 
+- Android Studio is required for the User Interface component and Pycharm is recommended for the Software and Hardware components.
 - For installation of dlib and Anaconda follow these tutorials.
     - https://www.learnopencv.com/install-opencv-3-and-dlib-on-windows-python-only/
     - https://www.pyimagesearch.com/2017/05/01/install-dlib-raspberry-pi/
