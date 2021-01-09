@@ -29,3 +29,7 @@ def register_your_face(label):
     cap.release()
     cv2.destroyAllWindows()
 
+
+if __name__ == "__main__":
+    label = input('Enter a label:')
+    register_your_face(label)

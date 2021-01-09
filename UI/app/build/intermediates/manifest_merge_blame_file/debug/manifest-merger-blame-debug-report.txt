@@ -6,16 +6,16 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="17"
-8-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
+8-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
+9-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:5:5-67
-11-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:5:22-64
+11-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:5:5-67
+11-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-12-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:6:5-80
-12-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:6:22-77
+12-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:6:5-80
+12-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:6:22-77
 13
 14    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 15    <!-- <uses-sdk android:minSdkVersion="14"/> -->
@@ -24,66 +24,66 @@
 16-->[com.google.firebase:firebase-database:19.5.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\9017fe7708a169c2a50beebdca0845a8\jetified-firebase-database-19.5.1\AndroidManifest.xml:25:22-76
 17
 18    <application
-18-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:8:5-32:19
+18-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:8:5-32:19
 19        android:name="androidx.multidex.MultiDexApplication"
 20        android:allowBackup="true"
-20-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:9:9-35
+20-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:9:9-35
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 21-->[androidx.core:core:1.1.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\33905501977a28c0fc6a2935607f48a6\core-1.1.0\AndroidManifest.xml:24:18-86
 22        android:debuggable="true"
 23        android:icon="@mipmap/ic_launcher"
-23-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:10:9-43
+23-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:10:9-43
 24        android:label="@string/app_name"
-24-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:11:9-41
+24-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:11:9-41
 25        android:roundIcon="@mipmap/ic_launcher_round"
-25-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:12:9-54
+25-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:12:9-54
 26        android:supportsRtl="true"
-26-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:13:9-35
+26-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:13:9-35
 27        android:testOnly="true"
 28        android:theme="@style/AppTheme" >
-28-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:14:9-40
+28-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:14:9-40
 29        <activity android:name="com.example.capstone.add" />
-29-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:15:9-50
-29-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:15:19-38
+29-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:15:9-50
+29-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:15:19-38
 30        <activity android:name="com.example.capstone.About" />
-30-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:16:9-43
-30-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:16:19-40
+30-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:16:9-43
+30-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:16:19-40
 31        <activity android:name="com.example.capstone.Support" />
-31-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:17:9-45
-31-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:17:19-42
+31-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:17:9-45
+31-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:17:19-42
 32        <activity android:name="com.example.capstone.Password" />
-32-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:18:9-46
-32-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:18:19-43
+32-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:18:9-46
+32-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:18:19-43
 33        <activity android:name="com.example.capstone.Enrollment" />
-33-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:19:9-48
-33-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:19:19-45
+33-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:19:9-48
+33-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:19:19-45
 34        <activity android:name="com.example.capstone.Drivers" />
-34-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:20:9-45
-34-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:20:19-42
+34-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:20:9-45
+34-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:20:19-42
 35        <activity android:name="com.example.capstone.Settings" />
-35-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:21:9-46
-35-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:21:19-43
+35-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:21:9-46
+35-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:21:19-43
 36        <activity android:name="com.example.capstone.signup" />
-36-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:22:9-44
-36-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:22:19-41
+36-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:22:9-44
+36-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:22:19-41
 37        <activity android:name="com.example.capstone.Login" />
-37-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:23:9-43
-37-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:23:19-40
+37-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:23:9-43
+37-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:23:19-40
 38        <activity android:name="com.example.capstone.homepage" />
-38-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:24:9-46
-38-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:24:19-43
+38-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:24:9-46
+38-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:24:19-43
 39        <activity android:name="com.example.capstone.MainActivity" >
-39-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:25:9-31:20
-39-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:25:19-47
+39-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:25:9-31:20
+39-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:25:19-47
 40            <intent-filter>
-40-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:26:13-30:29
+40-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:26:13-30:29
 41                <action android:name="android.intent.action.MAIN" />
-41-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:27:17-69
-41-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:27:25-66
+41-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:27:17-69
+41-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:27:25-66
 42
 43                <category android:name="android.intent.category.LAUNCHER" />
-43-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:29:17-77
-43-->D:\Documents\UniWork\Year 4\Semester 1\CEG4912\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:29:27-74
+43-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:29:17-77
+43-->D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:29:27-74
 44            </intent-filter>
 45        </activity>
 46
