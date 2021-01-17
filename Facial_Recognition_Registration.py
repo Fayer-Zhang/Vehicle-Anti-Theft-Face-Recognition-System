@@ -5,7 +5,7 @@ import cv2
 
 
 def register_your_face(label):
-    num_cap = 20
+    num_cap = 60
 
     path = sys.path[0] + '/Facial_images/face_rec/train/' + label
 
