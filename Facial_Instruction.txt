@@ -1,33 +1,34 @@
 Here, I introduce another library named "Dlib", which is a computer vision library always cooped with opencv.
 So to run the demo, we need to install Dlib on our system. 
-I found tutorials to install dlib, and it worked for my device (Win10). 
+1. I found tutorials to install dlib, and it worked for my device (Win10). 
 
-https://www.learnopencv.com/install-opencv-3-and-dlib-on-windows-python-only/ (I have tried and it did work well)
-https://www.pyimagesearch.com/2017/05/01/install-dlib-raspberry-pi/ (I haven't get a chance to test on my Pi)
+	https://www.learnopencv.com/install-opencv-3-and-dlib-on-windows-python-only/ (I have tried and it did work well)
+	https://www.pyimagesearch.com/2017/05/01/install-dlib-raspberry-pi/ (I haven't get a chance to test on my Pi)
 
-Note that to install on windows, make sure you have CMAKE and Visual Studio 2017 installed.
+	Note that to install on windows, make sure you have CMAKE and Visual Studio 2017 installed.
 
 
 2. How to use:
 	a. Add custom face dataset
 		1. Open "Facial_Recognition_Registration.py".
-		2. Change string variable "label" (at line 7) to your name, such as: label = "feier_zhang"
-		3. If using the laptop camera, make sure "cap = cv2.VideoCapture(0)" (at line 19);
-		   If using the external WebCam, make sure "cap = cv2.VideoCapture(1)" (at line 19).
-		4. Run "Facial_Recognition_Registration.py"
+		2. If using the laptop camera, make sure "cap = cv2.VideoCapture(0)" (at line 17);
+		   If using the external WebCam, make sure "cap = cv2.VideoCapture(1)" (at line 17).
+		3. Run "Facial_Recognition_Registration.py"
+		4. Enter the label as your name.
 		
 		Your face dataset:
 		1. Folder "/Facial_images" -> "/face_rec" -> "/train", then you can see the folder of your name is in it.
 	
-	b. Train your face recognizer
-		1. In "Facial_Recognition_Wrapper.py".
-		2. Make sure line 230 (in the main function): mode = 'train'
-		3. Run 
+	b. Run Facial_Recognition_Enrollment.py	 
 	
 	c. Test on videostream
-		1. In "Facial_Recognition_Wrapper.py".
-		2. Make sure line 230 (in the main function): mode = 'test'
-		3. Make sure line 182 to match your imaging device, same as above a.3
-		4. Run
+		1. In "Facial_Recognition_Inference.py".
+		2. Make sure line 27 to match your imaging device, same as above a.2
+		3. Run
+
+
+3. Requirements for face registration:
+	a. User can sometimes turn your head a little bit to let us get more face data, but you must make sure that there're 5 colles on each photo.
+	b. Don't register you face when too much light is coming.
 
 welcome any try-out and comments!
