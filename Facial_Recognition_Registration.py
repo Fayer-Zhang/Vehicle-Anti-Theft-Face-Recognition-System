@@ -2,10 +2,11 @@ import sys
 import os
 import math
 import cv2
+import Facial_Recognition_Enrollment
 
 
 def register_your_face(label):
-    num_cap = 60
+    num_cap = 50
 
     path = sys.path[0] + '/Facial_images/face_rec/train/' + label
 
@@ -14,7 +15,7 @@ def register_your_face(label):
     if not folder:
         os.makedirs(path)
 
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
     c = 0
     while c < num_cap:
         ret, frame = cap.read()
@@ -31,5 +32,6 @@ def register_your_face(label):
 
 
 if __name__ == "__main__":
-    label = input('Enter a label:')
+    label = input('Enter a label: ')
     register_your_face(label)
+    Facial_Recognition_Enrollment.enroll_face_dataset()
