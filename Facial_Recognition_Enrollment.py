@@ -43,12 +43,12 @@ def enroll_face_dataset():
   i = 0
   faceDescriptors = None
   for imagePath in imagePaths:
-    print("processing: {}".format(imagePath))
+    #print("processing: {}".format(imagePath))
     img = cv2.imread(imagePath)
 
     faces = faceDetector(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
 
-    print("{} Face(s) found".format(len(faces)))
+    #print("{} Face(s) found".format(len(faces)))
 
     for k, face in enumerate(faces):
 

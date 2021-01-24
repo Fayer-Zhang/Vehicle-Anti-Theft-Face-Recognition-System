@@ -28,7 +28,7 @@ So to run the demo, we need to install Dlib on our system.
 
 
 3. Requirements for face registration:
-	a. User can sometimes turn your head a little bit to let us get more face data, but you must make sure that there're 5 colles on each photo.
-	b. Don't register you face when too much light is coming.
+	a. User can sometimes slightly rotate their face, but must make sure their facical features (mouth, eyes, nose...) are within the camera view.
+	b. Ambient light could affect the performance of the facial detection, such as overexposure, glare, reflection or so on;
 
 welcome any try-out and comments!
