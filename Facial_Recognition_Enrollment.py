@@ -73,3 +73,7 @@ def enroll_face_dataset():
     np.save(pwd + '/Facial_models/descriptors.npy', faceDescriptors)
     with open(pwd + '/Facial_models/index.pkl', 'wb') as f:
         cPickle.dump(index, f)
+
+
+if __name__ == "__main__":
+    enroll_face_dataset()

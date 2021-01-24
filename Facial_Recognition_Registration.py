@@ -15,7 +15,7 @@ def register_your_face(label):
     if not folder:
         os.makedirs(path)
 
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
     c = 0
     while c < num_cap:
         ret, frame = cap.read()

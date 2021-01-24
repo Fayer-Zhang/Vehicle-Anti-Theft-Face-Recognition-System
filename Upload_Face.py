@@ -13,8 +13,11 @@ def upload_your_face(firstname, lastname, email, phone):
         for user in users.each():
             count += 1
         DBHelper.upload_data("User_" + str(count), firstname, lastname, email, phone)
+        print("Face registration start...")
         Facial_Recognition_Registration.register_your_face("User_" + str(count))
+        print("Data saved! Starting enrollment...")
         Facial_Recognition_Enrollment.enroll_face_dataset()
+        print("Face registration completed!")
         for i in range(20):
             DBHelper.upload_user_photo("User_" + str(count) + "/" + str(i) + ".jpg")
     except:

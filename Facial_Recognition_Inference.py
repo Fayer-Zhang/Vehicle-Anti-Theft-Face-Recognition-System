@@ -4,7 +4,6 @@ import cv2
 import numpy as np
 import DBHelper
 
-
 def inference():
     try:
         import cPickle  # Python 2
@@ -102,7 +101,6 @@ def inference():
     DBHelper.set_alarm("off")
     DBHelper.set_motor("off")
     cv2.destroyAllWindows()
-
 
 if __name__ == "__main__":
     inference()
