@@ -17,11 +17,10 @@ So to run the demo, we need to install Dlib on our system.
 		4. Enter the label as your name.
 		
 		Your face dataset:
-		1. Folder "/Facial_images" -> "/face_rec" -> "/train", then you can see the folder of your name is in it.
+		1. Folder "/Facial_images" -> "/face_rec" -> "/train", then you can see the folder of your name is in it. 
 	
-	b. Run Facial_Recognition_Enrollment.py	 
-	
-	c. Test on videostream
+
+	b. Test on videostream
 		1. In "Facial_Recognition_Inference.py".
 		2. Make sure line 27 to match your imaging device, same as above a.2
 		3. Run
