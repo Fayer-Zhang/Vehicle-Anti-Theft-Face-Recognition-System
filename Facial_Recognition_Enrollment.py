@@ -5,74 +5,71 @@ import sys
 import numpy as np
 
 try:
-  import cPickle  # Python2.
+    import cPickle  # Python2.
 except ImportError:
-  import _pickle as cPickle  # Python3.
+    import _pickle as cPickle  # Python3.
+
 
 def enroll_face_dataset():
-  pwd = sys.path[0]
-  PREDICTOR_PATH = pwd + '/Facial_models/shape_predictor_68_face_landmarks.dat'
-  FACE_RECOGNITION_MODEL_PATH = pwd + '/Facial_models/dlib_face_recognition_resnet_model_v1.dat'
+    pwd = sys.path[0]
+    PREDICTOR_PATH = pwd + '/Facial_models/shape_predictor_68_face_landmarks.dat'
+    FACE_RECOGNITION_MODEL_PATH = pwd + '/Facial_models/dlib_face_recognition_resnet_model_v1.dat'
 
-  faceDetector = dlib.get_frontal_face_detector()
-  shapePredictor = dlib.shape_predictor(PREDICTOR_PATH)
-  faceRecognizer = dlib.face_recognition_model_v1(FACE_RECOGNITION_MODEL_PATH)
+    faceDetector = dlib.get_frontal_face_detector()
+    shapePredictor = dlib.shape_predictor(PREDICTOR_PATH)
+    faceRecognizer = dlib.face_recognition_model_v1(FACE_RECOGNITION_MODEL_PATH)
 
+    faceDatasetFolder = pwd + '/Facial_images/face_rec/train/'
 
-  faceDatasetFolder = pwd + '/Facial_images/face_rec/train/'
+    subfolders = []
+    for x in os.listdir(faceDatasetFolder):
+        xpath = os.path.join(faceDatasetFolder, x)
+        if os.path.isdir(xpath):
+            subfolders.append(xpath)
 
-  subfolders = []
-  for x in os.listdir(faceDatasetFolder):
-    xpath = os.path.join(faceDatasetFolder, x)
-    if os.path.isdir(xpath):
-      subfolders.append(xpath)
+    nameLabelMap = {}
+    labels = []
+    imagePaths = []
+    for i, subfolder in enumerate(subfolders):
+        for x in os.listdir(subfolder):
+            xpath = os.path.join(subfolder, x)
+            if x.endswith('jpg'):
+                imagePaths.append(xpath)
+                labels.append(i)
+                nameLabelMap[xpath] = subfolder.split('/')[-1]
 
+    index = {}
+    i = 0
+    faceDescriptors = None
+    for imagePath in imagePaths:
+        # print("processing: {}".format(imagePath))
+        img = cv2.imread(imagePath)
 
-  nameLabelMap = {}
-  labels = []
-  imagePaths = []
-  for i, subfolder in enumerate(subfolders):
-    for x in os.listdir(subfolder):
-      xpath = os.path.join(subfolder, x)
-      if x.endswith('jpg'):
-        imagePaths.append(xpath)
-        labels.append(i)
-        nameLabelMap[xpath] = subfolder.split('/')[-1]
+        faces = faceDetector(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
 
-  index = {}
-  i = 0
-  faceDescriptors = None
-  for imagePath in imagePaths:
-    #print("processing: {}".format(imagePath))
-    img = cv2.imread(imagePath)
+        # print("{} Face(s) found".format(len(faces)))
 
-    faces = faceDetector(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+        for k, face in enumerate(faces):
 
-    #print("{} Face(s) found".format(len(faces)))
+            shape = shapePredictor(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), face)
 
-    for k, face in enumerate(faces):
+            landmarks = [(p.x, p.y) for p in shape.parts()]
 
-      shape = shapePredictor(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), face)
+            faceDescriptor = faceRecognizer.compute_face_descriptor(img, shape)
 
-      landmarks = [(p.x, p.y) for p in shape.parts()]
+            faceDescriptorList = [x for x in faceDescriptor]
+            faceDescriptorNdarray = np.asarray(faceDescriptorList, dtype=np.float64)
+            faceDescriptorNdarray = faceDescriptorNdarray[np.newaxis, :]
 
-      faceDescriptor = faceRecognizer.compute_face_descriptor(img, shape)
+            if faceDescriptors is None:
+                faceDescriptors = faceDescriptorNdarray
+            else:
+                faceDescriptors = np.concatenate((faceDescriptors, faceDescriptorNdarray), axis=0)
 
-    
-      faceDescriptorList = [x for x in faceDescriptor]
-      faceDescriptorNdarray = np.asarray(faceDescriptorList, dtype=np.float64)
-      faceDescriptorNdarray = faceDescriptorNdarray[np.newaxis, :]
+            index[i] = nameLabelMap[imagePath]
+            i += 1
 
-
-      if faceDescriptors is None:
-        faceDescriptors = faceDescriptorNdarray
-      else:
-        faceDescriptors = np.concatenate((faceDescriptors, faceDescriptorNdarray), axis=0)
-
-      index[i] = nameLabelMap[imagePath]
-      i += 1
-
-  # Write descriors and index to disk
-  np.save(pwd+'/Facial_models/descriptors.npy', faceDescriptors)
-  with open(pwd+'/Facial_models/index.pkl', 'wb') as f:
-    cPickle.dump(index, f)
+    # Write descriors and index to disk
+    np.save(pwd + '/Facial_models/descriptors.npy', faceDescriptors)
+    with open(pwd + '/Facial_models/index.pkl', 'wb') as f:
+        cPickle.dump(index, f)

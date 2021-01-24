@@ -4,6 +4,7 @@ import math
 import cv2
 import Facial_Recognition_Enrollment
 
+
 def register_your_face(label):
     num_cap = 50
 
@@ -37,6 +38,6 @@ if __name__ == "__main__":
     register_your_face(label)
     print("Data saved! Starting enrollment...")
     print()
-    Facial_Recognition_Enrollment.enroll_face_dataset()  #Need discuss and modify after intergrate with database. 
+    Facial_Recognition_Enrollment.enroll_face_dataset()  # Need discuss and modify after intergrate with database.
     print("Face registration completed!")
     print()

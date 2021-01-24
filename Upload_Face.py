@@ -1,5 +1,6 @@
 import DBHelper
 import Facial_Recognition_Registration
+import Facial_Recognition_Enrollment
 
 
 def upload_your_face(firstname, lastname, email, phone):
@@ -13,6 +14,7 @@ def upload_your_face(firstname, lastname, email, phone):
             count += 1
         DBHelper.upload_data("User_" + str(count), firstname, lastname, email, phone)
         Facial_Recognition_Registration.register_your_face("User_" + str(count))
+        Facial_Recognition_Enrollment.enroll_face_dataset()
         for i in range(20):
             DBHelper.upload_user_photo("User_" + str(count) + "/" + str(i) + ".jpg")
     except:

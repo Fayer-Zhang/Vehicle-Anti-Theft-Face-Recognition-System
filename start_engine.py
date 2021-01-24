@@ -1,6 +1,6 @@
 import os
 import DBHelper
-import Facial_Recognition_Wrapper
+import Facial_Recognition_Inference
 
 
 def start():
@@ -32,8 +32,7 @@ def start():
         print("Success.")
     except:
         print("No Thieves are registered.")
-    Facial_Recognition_Wrapper.training_recognizer("LBPH")
-    Facial_Recognition_Wrapper.face_recognition_inference("LBPH")
+    Facial_Recognition_Inference
 
 
 if __name__ == "__main__":
