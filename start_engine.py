@@ -32,7 +32,7 @@ def start():
         print("Success.")
     except:
         print("No Thieves are registered.")
-    Facial_Recognition_Inference
+    Facial_Recognition_Inference.inference()
 
 
 if __name__ == "__main__":

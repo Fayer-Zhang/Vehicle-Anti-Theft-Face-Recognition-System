@@ -4,99 +4,105 @@ import cv2
 import numpy as np
 import DBHelper
 
-try:
-    import cPickle  # Python 2
-except ImportError:
-    import _pickle as cPickle  # Python 3
 
-pwd = sys.path[0]
-PREDICTOR_PATH = pwd + '/Facial_models/shape_predictor_68_face_landmarks.dat'
-FACE_RECOGNITION_MODEL_PATH = pwd + '/Facial_models/dlib_face_recognition_resnet_model_v1.dat'
+def inference():
+    try:
+        import cPickle  # Python 2
+    except ImportError:
+        import _pickle as cPickle  # Python 3
 
-SKIP_FRAMES = 1
-THRESHOLD = 0.4
+    pwd = sys.path[0]
+    PREDICTOR_PATH = pwd + '/Facial_models/shape_predictor_68_face_landmarks.dat'
+    FACE_RECOGNITION_MODEL_PATH = pwd + '/Facial_models/dlib_face_recognition_resnet_model_v1.dat'
 
-faceDetector = dlib.get_frontal_face_detector()
-shapePredictor = dlib.shape_predictor(PREDICTOR_PATH)
-faceRecognizer = dlib.face_recognition_model_v1(FACE_RECOGNITION_MODEL_PATH)
+    SKIP_FRAMES = 1
+    THRESHOLD = 0.4
 
-index = np.load(pwd + '/Facial_models/index.pkl', allow_pickle=True)
-faceDescriptorsEnrolled = np.load(pwd + '/Facial_models/descriptors.npy')
+    faceDetector = dlib.get_frontal_face_detector()
+    shapePredictor = dlib.shape_predictor(PREDICTOR_PATH)
+    faceRecognizer = dlib.face_recognition_model_v1(FACE_RECOGNITION_MODEL_PATH)
 
-cam = cv2.VideoCapture(0)
-count = 0
+    index = np.load(pwd + '/Facial_models/index.pkl', allow_pickle=True)
+    faceDescriptorsEnrolled = np.load(pwd + '/Facial_models/descriptors.npy')
 
-x1 = x2 = y1 = y2 = 0
+    cam = cv2.VideoCapture(0)
+    count = 0
 
-cond = False
+    x1 = x2 = y1 = y2 = 0
 
-while DBHelper.get_power() == "on":
-    t = time.time()
-    success, im = cam.read()
+    cond = False
 
-    if not success:
-        print('cannot capture input from camera')
-        break
+    while DBHelper.get_power() == "on":
+        t = time.time()
+        success, im = cam.read()
 
-    if (count % SKIP_FRAMES) == 0:
+        if not success:
+            print('cannot capture input from camera')
+            break
 
-        img = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
-        faces = faceDetector(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+        if (count % SKIP_FRAMES) == 0:
 
-        for face in faces:
+            img = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
+            faces = faceDetector(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
 
-            shape = shapePredictor(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), face)
+            for face in faces:
 
-            x1 = face.left()
-            y1 = face.top()
-            x2 = face.right()
-            y2 = face.bottom()
+                shape = shapePredictor(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), face)
 
-            faceDescriptor = faceRecognizer.compute_face_descriptor(img, shape)
+                x1 = face.left()
+                y1 = face.top()
+                x2 = face.right()
+                y2 = face.bottom()
 
-            # dlib format to list
-            faceDescriptorList = [m for m in faceDescriptor]
-            # to numpy array
-            faceDescriptorNdarray = np.asarray(faceDescriptorList, dtype=np.float64)
-            faceDescriptorNdarray = faceDescriptorNdarray[np.newaxis, :]
+                faceDescriptor = faceRecognizer.compute_face_descriptor(img, shape)
 
-            # Euclidean distances
-            distances = np.linalg.norm(faceDescriptorsEnrolled - faceDescriptorNdarray, axis=1)
+                # dlib format to list
+                faceDescriptorList = [m for m in faceDescriptor]
+                # to numpy array
+                faceDescriptorNdarray = np.asarray(faceDescriptorList, dtype=np.float64)
+                faceDescriptorNdarray = faceDescriptorNdarray[np.newaxis, :]
 
-            # Calculate minimum distance and index of face
-            argmin = np.argmin(distances)  # index
-            minDistance = distances[argmin]  # minimum distance
+                # Euclidean distances
+                distances = np.linalg.norm(faceDescriptorsEnrolled - faceDescriptorNdarray, axis=1)
 
-            if minDistance <= THRESHOLD:
-                label = DBHelper.get_firstname(index[argmin]) + "_" + DBHelper.get_lastname(index[argmin])
-                cond = True
-            else:
-                label = 'unknown'
-                cond = False
+                # Calculate minimum distance and index of face
+                argmin = np.argmin(distances)  # index
+                minDistance = distances[argmin]  # minimum distance
 
-            # print("time taken = {:.3f} seconds".format(time.time() - t))
+                if minDistance <= THRESHOLD:
+                    label = DBHelper.get_firstname(index[argmin]) + "_" + DBHelper.get_lastname(index[argmin])
+                    cond = True
+                else:
+                    label = 'unknown'
+                    cond = False
 
-    cv2.rectangle(im, (x1, y1), (x2, y2), (0, 255, 0), 2)
-    font_face = cv2.FONT_HERSHEY_SIMPLEX
-    font_scale = 0.8
-    text_color = (0, 255, 0)
-    printLabel = '{} {:0.4f}'.format(label, minDistance)
-    cv2.putText(im, printLabel, (int(x1), int(y1)), font_face, font_scale, text_color, thickness=2)
+                # print("time taken = {:.3f} seconds".format(time.time() - t))
 
-    cv2.imshow('img', im)
+        cv2.rectangle(im, (x1, y1), (x2, y2), (0, 255, 0), 2)
+        font_face = cv2.FONT_HERSHEY_SIMPLEX
+        font_scale = 0.8
+        text_color = (0, 255, 0)
+        printLabel = '{} {:0.4f}'.format(label, minDistance)
+        cv2.putText(im, printLabel, (int(x1), int(y1)), font_face, font_scale, text_color, thickness=2)
 
-    k = cv2.waitKey(1) & 0xff
-    if k == 27:
-        break
+        cv2.imshow('img', im)
 
-    count += 1
-    if cond:
-        DBHelper.set_motor("on")
-        DBHelper.set_alarm("off")
-    elif not cond:
-        DBHelper.set_motor("off")
-        DBHelper.set_alarm("on")
+        k = cv2.waitKey(1) & 0xff
+        if k == 27:
+            break
 
-DBHelper.set_alarm("off")
-DBHelper.set_motor("off")
-cv2.destroyAllWindows()
+        count += 1
+        if cond:
+            DBHelper.set_motor("on")
+            DBHelper.set_alarm("off")
+        elif not cond:
+            DBHelper.set_motor("off")
+            DBHelper.set_alarm("on")
+
+    DBHelper.set_alarm("off")
+    DBHelper.set_motor("off")
+    cv2.destroyAllWindows()
+
+
+if __name__ == "__main__":
+    inference()
