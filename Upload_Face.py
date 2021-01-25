@@ -8,6 +8,7 @@ def upload_your_face(firstname, lastname, email, phone):
     # User ID is determined from number of user dataset in database
     # Later on it starts face recognition system and uploads it into the database based on the given user ID.
     users = DBHelper.db.child("Users").get()
+    print("Registering the User information...")
     try:
         count = 1
         for user in users.each():
@@ -18,12 +19,13 @@ def upload_your_face(firstname, lastname, email, phone):
         print("Data saved! Starting enrollment...")
         Facial_Recognition_Enrollment.enroll_face_dataset()
         print("Face registration completed!")
-        for i in range(20):
+        for i in range(50):
             DBHelper.upload_user_photo("User_" + str(count) + "/" + str(i) + ".jpg")
+        print("Success.")
     except:
         DBHelper.upload_data("User_1", firstname, lastname, email, phone)
         Facial_Recognition_Registration.register_your_face("User_1")
-        for i in range(20):
+        for i in range(50):
             DBHelper.upload_user_photo("User_1/" + str(i) + ".jpg")
 
 

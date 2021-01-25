@@ -169,5 +169,50 @@ def remove_register_data():
     db.child("signal").child("2").remove()
 
 
+# Downloads user photo to the specified folder.
+def download_user_photo_other(user_id, other_id):
+    storage.child("Photos_of_Users/" + user_id).download("Facial_images/face_rec/train/" + other_id)
+
+
+# Downloads thief photo to the specified folder.
+def download_thief_photo_other(thief_id, other_id):
+    storage.child("Photos_of_Thieves/" + thief_id).download("Photos_of_Thieves/" + other_id)
+
+
+# Returns the first name or else an empty string.
+def get_removal_firstname():
+    firstname = db.child("signal").child("3").child("First Name").get().val()
+    return firstname
+
+
+# Returns the last name or else an empty string.
+def get_removal_lastname():
+    lastname = db.child("signal").child("3").child("Last Name").get().val()
+    return lastname
+
+
+# Returns the e-mail or else an empty string.
+def get_removal_email():
+    email = db.child("signal").child("3").child("E-Mail").get().val()
+    return email
+
+
+# Returns the phone or else an empty string.
+def get_removal_phone():
+    phone = db.child("signal").child("3").child("Phone").get().val()
+    return phone
+
+
+# Uploads the data of user input into firebase.
+def upload_removal_data(firstname, lastname, email, phone):
+    data = {"First Name": firstname, "Last Name": lastname, "E-Mail": email, "Phone": phone}
+    db.child("signal").child("3").set(data)
+
+
+# Removes the inputs.
+def remove_removal_data():
+    db.child("signal").child("3").remove()
+
+
 if __name__ == "__main__":
-    upload_register_data("RandomFirst", "RandomLast", "Random@gmail.com", "0000000000")
+    upload_data("User_3", "RandomFirst", "RandomLast", "Random@gmail.com", "0000000000")
