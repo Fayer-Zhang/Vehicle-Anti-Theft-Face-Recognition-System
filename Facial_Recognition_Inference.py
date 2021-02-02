@@ -33,8 +33,7 @@ def inference():
     x1 = x2 = y1 = y2 = 0
 
     cond = False
-    t = 0
-
+    thief_time = 0
     while DBHelper.get_power() == "on":
         t = time.time()
         success, im = cam.read()
@@ -98,13 +97,14 @@ def inference():
         if cond:
             DBHelper.set_motor("on")
             DBHelper.set_alarm("off")
+            thief_time = 0
             time.sleep(1)
         elif not cond:
             DBHelper.set_motor("off")
             DBHelper.set_alarm("on")
-            t += 1
+            thief_time += 1
             time.sleep(1)
-            if t == 120:
+            if thief_time == 120:
                 Upload_Thief.upload_thief_face()
                 DBHelper.set_power("off")
 
