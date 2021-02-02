@@ -13,7 +13,6 @@ def upload_your_face(firstname, lastname, email, phone):
         count = 1
         for user in users.each():
             count += 1
-        DBHelper.upload_data("User_" + str(count), firstname, lastname, email, phone)
         print("Face registration start...")
         Facial_Recognition_Registration.register_your_face("User_" + str(count))
         print("Data saved! Starting enrollment...")
@@ -21,9 +20,9 @@ def upload_your_face(firstname, lastname, email, phone):
         print("Face registration completed!")
         for i in range(50):
             DBHelper.upload_user_photo("User_" + str(count) + "/" + str(i) + ".jpg")
+        DBHelper.upload_data("User_" + str(count), firstname, lastname, email, phone)
         print("Success.")
     except:
-        DBHelper.upload_data("User_1", firstname, lastname, email, phone)
         print("Face registration start...")
         Facial_Recognition_Registration.register_your_face("User_1")
         print("Data saved! Starting enrollment...")
@@ -31,6 +30,7 @@ def upload_your_face(firstname, lastname, email, phone):
         print("Face registration completed!")
         for i in range(50):
             DBHelper.upload_user_photo("User_1/" + str(i) + ".jpg")
+        DBHelper.upload_data("User_1", firstname, lastname, email, phone)
         print("Success.")
 
 
