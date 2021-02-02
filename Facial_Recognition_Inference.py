@@ -34,6 +34,8 @@ def inference():
 
     cond = False
     thief_time = 0
+    label = 'unknown'
+
     while DBHelper.get_power() == "on":
         t = time.time()
         success, im = cam.read()
