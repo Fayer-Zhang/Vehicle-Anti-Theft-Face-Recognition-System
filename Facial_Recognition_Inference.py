@@ -98,6 +98,7 @@ def inference():
         if cond:
             DBHelper.set_motor("on")
             DBHelper.set_alarm("off")
+            time.sleep(1)
         elif not cond:
             DBHelper.set_motor("off")
             DBHelper.set_alarm("on")
