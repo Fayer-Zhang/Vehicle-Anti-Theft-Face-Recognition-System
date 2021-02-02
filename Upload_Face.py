@@ -24,9 +24,14 @@ def upload_your_face(firstname, lastname, email, phone):
         print("Success.")
     except:
         DBHelper.upload_data("User_1", firstname, lastname, email, phone)
+        print("Face registration start...")
         Facial_Recognition_Registration.register_your_face("User_1")
+        print("Data saved! Starting enrollment...")
+        Facial_Recognition_Enrollment.enroll_face_dataset()
+        print("Face registration completed!")
         for i in range(50):
             DBHelper.upload_user_photo("User_1/" + str(i) + ".jpg")
+        print("Success.")
 
 
 if __name__ == "__main__":

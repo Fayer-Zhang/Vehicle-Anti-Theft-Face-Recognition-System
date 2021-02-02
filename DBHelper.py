@@ -214,5 +214,12 @@ def remove_removal_data():
     db.child("signal").child("3").remove()
 
 
+# Uploads the data of specified thief into firebase.
+def upload_thief_data(thief_id, date, time):
+    data = {"Date": date, "Time": time}
+    db.child("Thieves").child(thief_id).set(data)
+
+
 if __name__ == "__main__":
-    upload_data("User_3", "RandomFirst", "RandomLast", "Random@gmail.com", "0000000000")
+    upload_register_data("RandomFirst", "RandomLast", "Random@gmail.com", "0000000000")
+    upload_removal_data("RandomFirst", "RandomLast", "Random@gmail.com", "0000000000")

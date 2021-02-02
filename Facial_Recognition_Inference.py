@@ -3,6 +3,9 @@ import dlib
 import cv2
 import numpy as np
 import DBHelper
+import time
+import Upload_Thief
+
 
 def inference():
     try:
@@ -30,6 +33,7 @@ def inference():
     x1 = x2 = y1 = y2 = 0
 
     cond = False
+    t = 0
 
     while DBHelper.get_power() == "on":
         t = time.time()
@@ -97,10 +101,16 @@ def inference():
         elif not cond:
             DBHelper.set_motor("off")
             DBHelper.set_alarm("on")
+            t += 1
+            time.sleep(1)
+            if t == 120:
+                Upload_Thief.upload_thief_face()
+                DBHelper.set_power("off")
 
     DBHelper.set_alarm("off")
     DBHelper.set_motor("off")
     cv2.destroyAllWindows()
+
 
 if __name__ == "__main__":
     inference()
