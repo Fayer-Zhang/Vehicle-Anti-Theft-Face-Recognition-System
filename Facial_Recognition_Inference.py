@@ -33,6 +33,7 @@ def inference():
     x1 = x2 = y1 = y2 = 0
 
     cond = False
+    thief = False
     thief_time = 0
     label = 'unknown'
 
@@ -100,19 +101,19 @@ def inference():
             DBHelper.set_motor("on")
             DBHelper.set_alarm("off")
             thief_time = 0
-            time.sleep(1)
         elif not cond:
             DBHelper.set_motor("off")
             DBHelper.set_alarm("on")
             thief_time += 1
-            time.sleep(1)
-            if thief_time == 120:
-                Upload_Thief.upload_thief_face()
+            if thief_time == 10:
+                thief = True
                 DBHelper.set_power("off")
 
     DBHelper.set_alarm("off")
     DBHelper.set_motor("off")
     cv2.destroyAllWindows()
+    if thief:
+        Upload_Thief.upload_thief_face()
 
 
 if __name__ == "__main__":

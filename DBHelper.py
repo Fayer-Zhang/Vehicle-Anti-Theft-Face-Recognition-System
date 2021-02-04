@@ -78,7 +78,7 @@ def upload_user_photo(user_id):
 
 # Uploads the photos of thief, input should be something like "example.jpg"
 def upload_thief_photo(thief_id):
-    storage.child("Photos_of_Thieves/" + thief_id).put("Facial_images/face_rec/train/" + thief_id)
+    storage.child("Photos_of_Thieves/" + thief_id).put("Photos_of_Thieves/" + thief_id)
 
 
 # Downloads the specified user's photos, input should be something like "example.jpg"
@@ -221,5 +221,4 @@ def upload_thief_data(thief_id, date, time):
 
 
 if __name__ == "__main__":
-    upload_register_data("RandomFirst", "RandomLast", "Random@gmail.com", "0000000000")
-    upload_removal_data("RandomFirst", "RandomLast", "Random@gmail.com", "0000000000")
+    upload_data("User_3", "RandomFirst", "RandomLast", "Random@gmail.com", "0000000000")

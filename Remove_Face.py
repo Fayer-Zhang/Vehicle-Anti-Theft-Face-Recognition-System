@@ -1,6 +1,7 @@
 import DBHelper
 import os
 import shutil
+import Facial_Recognition_Enrollment
 
 
 def remove_your_face(firstname, lastname, email, phone):
@@ -15,7 +16,7 @@ def remove_your_face(firstname, lastname, email, phone):
             count2 += 1
             if DBHelper.get_firstname("User_" + str(count2)) == firstname and DBHelper.get_lastname(
                     "User_" + str(count2)) == lastname and DBHelper.get_email(
-                    "User_" + str(count2)) == email and DBHelper.get_phone("User_" + str(count2)) == phone:
+                "User_" + str(count2)) == email and DBHelper.get_phone("User_" + str(count2)) == phone:
                 DBHelper.remove_data("User_" + str(count2))
                 for i in range(50):
                     DBHelper.delete_user_photo("User_" + str(count2) + "/" + str(i) + ".jpg")
@@ -52,6 +53,7 @@ def remove_your_face(firstname, lastname, email, phone):
                 DBHelper.delete_user_photo("User_" + str(count2 + 1) + "/" + str(i) + ".jpg")
             DBHelper.remove_data("User_" + str(count))
             shutil.rmtree("Facial_images/face_rec/train/User_" + str(count))
+        Facial_Recognition_Enrollment.enroll_face_dataset()
         print("Success.")
     except:
         print("No Users exist for User Removal.")

@@ -1,6 +1,5 @@
 import DBHelper
-import Facial_Recognition_Registration
-import Facial_Recognition_Enrollment
+import Facial_Recognition_Thief_Registration
 from datetime import datetime
 
 
@@ -13,8 +12,7 @@ def upload_thief_face():
         count = 1
         for thief in thieves.each():
             count += 1
-        Facial_Recognition_Registration.register_your_face("Thief_" + str(count))
-        Facial_Recognition_Enrollment.enroll_face_dataset()
+        Facial_Recognition_Thief_Registration.register_your_face("Thief_" + str(count))
         for i in range(50):
             DBHelper.upload_thief_photo("Thief_" + str(count) + "/" + str(i) + ".jpg")
         date = datetime.now().strftime("%d/%m/%Y")
@@ -22,14 +20,12 @@ def upload_thief_face():
         DBHelper.upload_thief_data("Thief_" + str(count), date, time)
         print("An intruder is recorded.")
     except:
-        DBHelper.upload_thief_data("Thief_1", date, time)
-        Facial_Recognition_Registration.register_your_face("Thief_1")
-        Facial_Recognition_Enrollment.enroll_face_dataset()
+        Facial_Recognition_Thief_Registration.register_your_face("Thief_1")
         for i in range(50):
             DBHelper.upload_thief_photo("Thief_1/" + str(i) + ".jpg")
         date = datetime.now().strftime("%d/%m/%Y")
         time = datetime.now().strftime("%H:%M:%S")
-        DBHelper.upload_thief_data("Thief_" + str(count), date, time)
+        DBHelper.upload_thief_data("Thief_1", date, time)
         print("An intruder is recorded.")
 
 
