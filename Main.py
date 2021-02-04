@@ -5,8 +5,9 @@ import Remove_Face
 import Check_Up
 
 if __name__ == "__main__":
+    print("Must do the check up First. (This may take long time.)")
     Check_Up.update()
-    print("Starting the Program.")
+    print("Starting the program.")
     while True:
         if DBHelper.get_power() == "on":
             Start_Engine.start()
