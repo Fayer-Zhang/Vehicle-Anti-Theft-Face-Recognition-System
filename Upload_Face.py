@@ -1,6 +1,8 @@
 import DBHelper
 import Facial_Recognition_Registration
 import Facial_Recognition_Enrollment
+from joblib import Parallel, delayed
+import multiprocessing
 
 
 def upload_your_face(firstname, lastname, email, phone):
@@ -15,22 +17,22 @@ def upload_your_face(firstname, lastname, email, phone):
             count += 1
         print("Face registration start...")
         Facial_Recognition_Registration.register_your_face("User_" + str(count))
+        Parallel(n_jobs=multiprocessing.cpu_count())(
+            delayed(upload_parallel_user_photos)(i, count) for i in range(50))
+        DBHelper.upload_data("User_" + str(count), firstname, lastname, email, phone)
         print("Data saved! Starting enrollment...")
         Facial_Recognition_Enrollment.enroll_face_dataset()
         print("Face registration completed!")
-        for i in range(50):
-            DBHelper.upload_user_photo("User_" + str(count) + "/" + str(i) + ".jpg")
-        DBHelper.upload_data("User_" + str(count), firstname, lastname, email, phone)
         print("Success.")
     except:
         print("Face registration start...")
         Facial_Recognition_Registration.register_your_face("User_1")
+        Parallel(n_jobs=multiprocessing.cpu_count())(
+            delayed(upload_parallel_user_photo)(i) for i in range(50))
+        DBHelper.upload_data("User_1", firstname, lastname, email, phone)
         print("Data saved! Starting enrollment...")
         Facial_Recognition_Enrollment.enroll_face_dataset()
         print("Face registration completed!")
-        for i in range(50):
-            DBHelper.upload_user_photo("User_1/" + str(i) + ".jpg")
-        DBHelper.upload_data("User_1", firstname, lastname, email, phone)
         print("Success.")
 
 
@@ -40,3 +42,11 @@ if __name__ == "__main__":
     e = input('Enter your E-Mail:')
     p = input('Enter your Phone:')
     upload_your_face(f, l, e, p)
+
+
+def upload_parallel_user_photos(i, count):
+    DBHelper.upload_user_photo("User_" + str(count) + "/" + str(i) + ".jpg")
+
+
+def upload_parallel_user_photo(i):
+    DBHelper.upload_user_photo("User_1/" + str(i) + ".jpg")

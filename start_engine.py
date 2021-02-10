@@ -9,7 +9,7 @@ def start():
     for user in users.each():
         count += 1
     if count != 0:
-        print("Starting the Face Recognition Software...")
+        print("Initializing the Face Recognition Software...")
         Facial_Recognition_Inference.inference()
     else:
         print("No Users exist for Facial Recognition Software.")
