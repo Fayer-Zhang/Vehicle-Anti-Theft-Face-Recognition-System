@@ -3,7 +3,6 @@ import dlib
 import cv2
 import numpy as np
 import DBHelper
-import time
 import Upload_Thief
 
 
@@ -34,11 +33,10 @@ def inference():
 
     cond = False
     thief = False
-    thief_time = 0
     label = 'unknown'
+    start = time.time()
 
     while DBHelper.get_power() == "on":
-        t = time.time()
         success, im = cam.read()
 
         if not success:
@@ -100,12 +98,12 @@ def inference():
         if cond:
             DBHelper.set_motor("on")
             DBHelper.set_alarm("off")
-            thief_time = 0
+            start = time.time()
         elif not cond:
             DBHelper.set_motor("off")
             DBHelper.set_alarm("on")
-            thief_time += 1
-            if thief_time == 10:
+            end = time.time()
+            if end - start >= 30:
                 thief = True
                 DBHelper.set_power("off")
 
