@@ -1,5 +1,7 @@
 import os
 import DBHelper
+from joblib import Parallel, delayed
+import multiprocessing
 
 
 def update():
@@ -13,8 +15,8 @@ def update():
             count += 1
             if not os.path.isdir("Facial_images/face_rec/train/User_" + str(count)):
                 os.makedirs("Facial_images/face_rec/train/User_" + str(count))
-            for i in range(50):
-                DBHelper.download_user_photo("User_" + str(count) + "/" + str(i) + ".jpg")
+            Parallel(n_jobs=multiprocessing.cpu_count())(
+                delayed(download_parallel_user_photos)(i, count) for i in range(50))
         print("Success.")
     except:
         print("No Users are registered.")
@@ -25,8 +27,8 @@ def update():
             count += 1
             if not os.path.isdir("Photos_of_Thieves/Thief_" + str(count)):
                 os.makedirs("Photos_of_Thieves/Thief_" + str(count))
-            for i in range(50):
-                DBHelper.download_thief_photo("Thief_" + str(count) + "/" + str(i) + ".jpg")
+            Parallel(n_jobs=multiprocessing.cpu_count())(
+                delayed(download_parallel_thief_photos)(i, count) for i in range(50))
         print("Success.")
     except:
         print("No Thieves are registered.")
@@ -34,3 +36,11 @@ def update():
 
 if __name__ == "__main__":
     update()
+
+
+def download_parallel_user_photos(i, count):
+    DBHelper.download_user_photo("User_" + str(count) + "/" + str(i) + ".jpg")
+
+
+def download_parallel_thief_photos(i, count):
+    DBHelper.download_thief_photo("Thief_" + str(count) + "/" + str(i) + ".jpg")
