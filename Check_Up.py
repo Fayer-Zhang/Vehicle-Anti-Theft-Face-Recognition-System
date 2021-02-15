@@ -3,6 +3,8 @@ import DBHelper
 from joblib import Parallel, delayed
 import multiprocessing
 
+import Facial_Recognition_Enrollment
+
 
 def update():
     # Downloads all the user and thief photos from database to the project folder first or updates them.
@@ -17,7 +19,7 @@ def update():
                 os.makedirs("Facial_images/face_rec/train/User_" + str(count))
             Parallel(n_jobs=multiprocessing.cpu_count())(
                 delayed(download_parallel_user_photos)(i, count) for i in range(50))
-        print("Success.")
+        print("User data is found.")
     except:
         print("No Users are registered.")
     count = 0
@@ -29,9 +31,12 @@ def update():
                 os.makedirs("Photos_of_Thieves/Thief_" + str(count))
             Parallel(n_jobs=multiprocessing.cpu_count())(
                 delayed(download_parallel_thief_photos)(i, count) for i in range(50))
-        print("Success.")
+        print("Thief data is found.")
     except:
         print("No Thieves are registered.")
+    print("Data saved! Starting enrollment...")
+    Facial_Recognition_Enrollment.enroll_face_dataset()
+    print("Success.")
 
 
 if __name__ == "__main__":

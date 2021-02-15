@@ -4,6 +4,8 @@ from joblib import Parallel, delayed
 import multiprocessing
 import os
 
+import Facial_Recognition_Enrollment
+
 
 def remove_your_face(firstname, lastname, email, phone):
     users = DBHelper.db.child("Users").get()
@@ -49,6 +51,9 @@ def remove_your_face(firstname, lastname, email, phone):
                                  DBHelper.get_phone("User_" + str(count2 + 1)))
             DBHelper.remove_data("User_" + str(count))
             shutil.rmtree("Facial_images/face_rec/train/User_" + str(count))
+        print("Data saved! Starting enrollment...")
+        Facial_Recognition_Enrollment.enroll_face_dataset()
+        print("Face removal completed!")
         print("Success.")
     except:
         print("No Users exist for User Removal.")
