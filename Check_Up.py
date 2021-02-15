@@ -19,7 +19,7 @@ def update():
                 os.makedirs("Facial_images/face_rec/train/User_" + str(count))
             Parallel(n_jobs=multiprocessing.cpu_count())(
                 delayed(download_parallel_user_photos)(i, count) for i in range(50))
-        print("User data is found.")
+        print("User data is checked.")
     except:
         print("No Users are registered.")
     count = 0
@@ -31,7 +31,7 @@ def update():
                 os.makedirs("Photos_of_Thieves/Thief_" + str(count))
             Parallel(n_jobs=multiprocessing.cpu_count())(
                 delayed(download_parallel_thief_photos)(i, count) for i in range(50))
-        print("Thief data is found.")
+        print("Thief data is checked.")
     except:
         print("No Thieves are registered.")
     print("Data saved! Starting enrollment...")
