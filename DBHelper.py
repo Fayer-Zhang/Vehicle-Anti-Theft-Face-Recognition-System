@@ -1,4 +1,7 @@
 import pyrebase
+import sys
+
+pwd = sys.path[0]
 
 firebaseConfig = {
     'apiKey': "AIzaSyAdL0W5HscjEDFPK4BDi6Cnc7FLa30GPYY",
@@ -9,7 +12,7 @@ firebaseConfig = {
     'messagingSenderId': "163692530359",
     'appId': "1:163692530359:web:b6dc7ccfc56a79afb11b32",
     'measurementId': "G-EPWP2LK89Q",
-    'serviceAccount': 'vehicleantitheftrecognition-firebase-adminsdk-krrgw-05da515de5.json'
+    'serviceAccount': pwd + '/vehicleantitheftrecognition-firebase-adminsdk-krrgw-05da515de5.json'
 }
 
 firebase = pyrebase.initialize_app(firebaseConfig)

@@ -26,7 +26,7 @@ def inference():
     index = np.load(pwd + '/Facial_models/index.pkl', allow_pickle=True)
     faceDescriptorsEnrolled = np.load(pwd + '/Facial_models/descriptors.npy')
 
-    cam = cv2.VideoCapture(0)
+    cam = cv2.VideoCapture(1)
     count = 0
 
     x1 = x2 = y1 = y2 = 0
@@ -81,14 +81,14 @@ def inference():
 
                 # print("time taken = {:.3f} seconds".format(time.time() - t))
 
-        cv2.rectangle(im, (x1, y1), (x2, y2), (0, 255, 0), 2)
-        font_face = cv2.FONT_HERSHEY_SIMPLEX
-        font_scale = 0.8
-        text_color = (0, 255, 0)
-        printLabel = '{} {:0.4f}'.format(label, minDistance)
-        cv2.putText(im, printLabel, (int(x1), int(y1)), font_face, font_scale, text_color, thickness=2)
+                cv2.rectangle(im, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                font_face = cv2.FONT_HERSHEY_SIMPLEX
+                font_scale = 0.8
+                text_color = (0, 255, 0)
+                printLabel = '{} {:0.4f}'.format(label, minDistance)
+                cv2.putText(im, printLabel, (int(x1), int(y1)), font_face, font_scale, text_color, thickness=2)
 
-        cv2.imshow('img', im)
+            cv2.imshow('img', im)
 
         k = cv2.waitKey(1) & 0xff
         if k == 27:
