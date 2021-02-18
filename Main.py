@@ -1,5 +1,5 @@
 import DBHelper
-import start_engine
+import Start_Engine
 import Upload_Face
 import Remove_Face
 import Check_Up
@@ -10,7 +10,7 @@ if __name__ == "__main__":
     print("Starting the program.")
     while True:
         if DBHelper.get_power() == "on":
-            start_engine.start()
+            Start_Engine.start()
 
         if None not in (DBHelper.get_register_firstname(),
                         DBHelper.get_register_lastname(),
