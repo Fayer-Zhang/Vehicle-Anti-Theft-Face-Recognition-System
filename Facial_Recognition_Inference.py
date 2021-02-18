@@ -17,7 +17,9 @@ def inference():
     FACE_RECOGNITION_MODEL_PATH = pwd + '/Facial_models/dlib_face_recognition_resnet_model_v1.dat'
 
     SKIP_FRAMES = 1
+    MAXIMUM_TIME = 10
     THRESHOLD = 0.4
+    DEMO_SHOW = False
 
     faceDetector = dlib.get_frontal_face_detector()
     shapePredictor = dlib.shape_predictor(PREDICTOR_PATH)
@@ -35,6 +37,8 @@ def inference():
     thief = False
     label = 'unknown'
     start = time.time()
+
+    label_counter = {}
 
     while DBHelper.get_power() == "on":
         success, im = cam.read()
@@ -74,38 +78,60 @@ def inference():
 
                 if minDistance <= THRESHOLD:
                     label = DBHelper.get_firstname(index[argmin]) + "_" + DBHelper.get_lastname(index[argmin])
-                    cond = True
+                    #cond = True
                 else:
                     label = 'unknown'
-                    cond = False
+                    #cond = False
+
+                if label in label_counter.keys():
+                    label_counter[label] += 1
+                else:
+                    label_counter[label] = 1
 
                 # print("time taken = {:.3f} seconds".format(time.time() - t))
+                if DEMO_SHOW:
+                    cv2.rectangle(im, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                    font_face = cv2.FONT_HERSHEY_SIMPLEX
+                    font_scale = 0.8
+                    text_color = (0, 255, 0)
+                    printLabel = '{} {:0.4f}'.format(label, minDistance)
+                    cv2.putText(im, printLabel, (int(x1), int(y1)), font_face, font_scale, text_color, thickness=2)
 
-                cv2.rectangle(im, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                font_face = cv2.FONT_HERSHEY_SIMPLEX
-                font_scale = 0.8
-                text_color = (0, 255, 0)
-                printLabel = '{} {:0.4f}'.format(label, minDistance)
-                cv2.putText(im, printLabel, (int(x1), int(y1)), font_face, font_scale, text_color, thickness=2)
-
-            cv2.imshow('img', im)
+            if DEMO_SHOW:
+                cv2.imshow('img', im)
 
         k = cv2.waitKey(1) & 0xff
         if k == 27:
             break
 
         count += 1
-        if cond:
-            DBHelper.set_motor("on")
-            DBHelper.set_alarm("off")
-            start = time.time()
-        elif not cond:
-            DBHelper.set_motor("off")
-            DBHelper.set_alarm("on")
-            end = time.time()
-            if end - start >= 30:
-                thief = True
-                DBHelper.set_power("off")
+
+        if(count == MAXIMUM_TIME):
+            break
+
+    print("The statics of 10 frames: ", label_counter)
+
+    output_label =sorted(label_counter,key=lambda x:label_counter[x])[-1]
+
+    print("Final results: ", output_label)
+
+    if output_label == 'unknown':
+        cond = False
+    else:
+        cond = True
+
+    if cond:
+        DBHelper.set_motor("on")
+        DBHelper.set_alarm("off")
+        start = time.time()
+    elif not cond:
+        DBHelper.set_motor("off")
+        DBHelper.set_alarm("on")
+        end = time.time()
+        if end - start >= 30:
+            thief = True
+            DBHelper.set_power("off")
+
 
     DBHelper.set_alarm("off")
     DBHelper.set_motor("off")
