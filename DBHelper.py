@@ -223,5 +223,17 @@ def upload_thief_data(thief_id, date, time):
     db.child("Thieves").child(thief_id).set(data)
 
 
+# Returns the e-mail or else an empty string.
+def get_time(thief_id):
+    email = db.child("Thieves").child(str(thief_id)).child("Time").get().val()
+    return email
+
+
+# Returns the phone or else an empty string.
+def get_date(thief_id):
+    phone = db.child("Thieves").child(str(thief_id)).child("Date").get().val()
+    return phone
+
+
 if __name__ == "__main__":
     upload_data("User_3", "RandomFirst", "RandomLast", "Random@gmail.com", "0000000000")

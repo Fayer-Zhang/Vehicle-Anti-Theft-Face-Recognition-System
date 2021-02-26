@@ -2,7 +2,6 @@ import os
 import DBHelper
 from joblib import Parallel, delayed
 import multiprocessing
-
 import Facial_Recognition_Enrollment
 
 
@@ -31,6 +30,7 @@ def update():
                 os.makedirs("Photos_of_Thieves/Thief_" + str(count))
             Parallel(n_jobs=multiprocessing.cpu_count())(
                 delayed(download_parallel_thief_photos)(i, count) for i in range(50))
+            print("Thief_" + str(count) + " is detected at " + DBHelper.get_time("Thief_" + str(count)) + ", " + DBHelper.get_date("Thief_" + str(count)))
         print("Thief data is checked.")
     except:
         print("No Thieves are registered.")
