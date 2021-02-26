@@ -4,7 +4,7 @@
             "outputFile": "D:\\Documents\\UniWork\\Year 4\\Semester 2\\CEG4913\\Project\\Vehicle Anti-Theft Face Recognition System\\UI\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\33905501977a28c0fc6a2935607f48a6\\core-1.1.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\f1308ae1975b884eda700d9efcb5b767\\core-1.1.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\b91ce1cd424d5095fc58a5b57c5d94c7\\appcompat-1.0.2\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\40667036b414bb20a1cedf7f72502ec3\\appcompat-1.0.2\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

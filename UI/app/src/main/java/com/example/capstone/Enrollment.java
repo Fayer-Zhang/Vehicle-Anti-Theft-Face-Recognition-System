@@ -125,4 +125,8 @@ public class Enrollment extends AppCompatActivity {
 
 
     }
+
+    public void back(View view){
+        startActivity(new Intent(getApplicationContext(), Settings.class));
+    }
 }

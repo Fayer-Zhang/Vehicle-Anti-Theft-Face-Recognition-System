@@ -4,7 +4,24 @@
             "outputFile": "D:\\Documents\\UniWork\\Year 4\\Semester 2\\CEG4913\\Project\\Vehicle Anti-Theft Face Recognition System\\UI\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lv\\values-lv.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\18b63455f7cdf2e55499d904fd0b4a4d\\jetified-play-services-base-17.1.0\\res\\values-lv\\values.xml",
+                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\f1308ae1975b884eda700d9efcb5b767\\core-1.1.0\\res\\values-lv\\values-lv.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "48",
+                        "startColumns": "4",
+                        "startOffsets": "5869",
+                        "endColumns": "100",
+                        "endOffsets": "5965"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\63a7c4d3e4b48e466596ed6f760df9ff\\play-services-base-17.1.0\\res\\values-lv\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\2a38911dfcd618f6f10b3261ee4a7ed5\\jetified-play-services-basement-17.1.0\\res\\values-lv\\values.xml",
+                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\153233e14d2d87f6062aa03fc4d3aff0\\jetified-play-services-basement-17.1.0\\res\\values-lv\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\b91ce1cd424d5095fc58a5b57c5d94c7\\appcompat-1.0.2\\res\\values-lv\\values-lv.xml",
+                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\40667036b414bb20a1cedf7f72502ec3\\appcompat-1.0.2\\res\\values-lv\\values-lv.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,23 +69,6 @@
                         "startOffsets": "105,225,333,442,528,632,754,836,918,1028,1136,1243,1352,1464,1567,1679,1786,1891,1991,2076,2185,2297,2396,2507,2616,2721,2895,5787",
                         "endColumns": "119,107,108,85,103,121,81,81,109,107,106,108,111,102,111,106,104,99,84,108,111,98,110,108,104,173,98,81",
                         "endOffsets": "220,328,437,523,627,749,831,913,1023,1131,1238,1347,1459,1562,1674,1781,1886,1986,2071,2180,2292,2391,2502,2611,2716,2890,2989,5864"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\33905501977a28c0fc6a2935607f48a6\\core-1.1.0\\res\\values-lv\\values-lv.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "48",
-                        "startColumns": "4",
-                        "startOffsets": "5869",
-                        "endColumns": "100",
-                        "endOffsets": "5965"
                     }
                 }
             ]

@@ -23,7 +23,7 @@ import java.util.HashMap;
 
 public class homepage extends AppCompatActivity {
     FirebaseAuth fAuth;
-    private Button setting, poweron, alarmoff;
+    private Button setting, poweron, alarmoff, apps;
     DatabaseReference reff;
     Signal sig;
     int check = 0;
@@ -39,6 +39,7 @@ public class homepage extends AppCompatActivity {
         setting = findViewById(R.id.settings);
         poweron = findViewById(R.id.poweron);
         alarmoff = findViewById(R.id.alarmoff);
+        apps = findViewById(R.id.apps);
         at = findViewById(R.id.alarmtitle3);
         a = findViewById(R.id.alarm);
         et = findViewById(R.id.enginetitle3);
@@ -57,6 +58,14 @@ public class homepage extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Settings.class));
             }
         });
+
+        apps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Apps.class));
+            }
+        });
+
 
         poweron.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,4 +112,9 @@ public class homepage extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
     }
+
+    public void back(View view){
+
+    }
+
 }

@@ -129,4 +129,8 @@ public class Drivers extends AppCompatActivity{
         startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
     }
+
+    public void back(View view){
+        startActivity(new Intent(getApplicationContext(), Settings.class));
+    }
 }

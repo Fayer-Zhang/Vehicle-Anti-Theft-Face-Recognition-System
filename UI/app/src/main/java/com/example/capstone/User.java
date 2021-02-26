@@ -4,16 +4,15 @@ public class User {
 
     private String Firstname;
     private String Lastname;
-    private Long phone;
+    private String phone;
     private String email;
-    private String password;
 
-    public User(String fn, String ln, Long ph, String em, String pw) {
+    public User(String fn, String ln, String ph, String em) {
         Firstname = fn;
         Lastname = ln;
         phone = ph;
         email = em;
-        password = pw;
+
     }
 
     public String getFirstname() {
@@ -32,11 +31,11 @@ public class User {
         Lastname = lastname;
     }
 
-    public Long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -48,11 +47,4 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

@@ -11,15 +11,69 @@
         layout="@layout/toolbar"/>
 
     <TextView
-        android:id="@+id/supporttitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    android:id="@+id/supporttitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginBottom="630dp"
+    android:gravity="center"
+    android:text="Support"
+    android:textColor="#ffffff"
+    android:textSize="30dp"
+    app:fontFamily="normal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/contacttitle"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
         android:layout_marginStart="15dp"
-        android:layout_marginBottom="630dp"
-        android:gravity="center"
-        android:text="Support"
+        android:layout_marginBottom="550dp"
+        android:text="Contact us"
         android:textColor="#ffffff"
-        android:textSize="30dp"
+        android:textSize="22dp"
+        app:fontFamily="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/contacttitle2"
+        android:layout_width="365dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="435dp"
+        android:text="Chat with a Customer Specialist\n\nHave questions? Email us for real-time help.\n\napere094@uottawa.ca"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        app:fontFamily="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/contacttitle3"
+        android:layout_width="365dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="390dp"
+        android:text="Call us"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:fontFamily="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/contacttitle4"
+        android:layout_width="365dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="280dp"
+        android:text="Get in touch, free of charge. Just call 1-800-123-4567\n\nCustomer representatives are available from 3 a.m. to 10 p.m., daily."
+        android:textColor="#ffffff"
+        android:textSize="15dp"
         app:fontFamily="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

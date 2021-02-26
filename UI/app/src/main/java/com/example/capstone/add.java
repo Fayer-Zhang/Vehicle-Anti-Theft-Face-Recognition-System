@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -36,6 +38,7 @@ public class add extends AppCompatActivity {
     String userID;
     int numOfDrivers;
     private String fn, ln, em, ph;
+    DatabaseReference reff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +121,11 @@ public class add extends AppCompatActivity {
                     public void onSuccess(Void aVoid) {
                     }
                 });
+                reff = FirebaseDatabase.getInstance().getReference().child("signal");
+                reff.child("2").child("E-Mail").setValue(em);
+                reff.child("2").child("First Name").setValue(fn);
+                reff.child("2").child("Last Name").setValue(ln);
+                reff.child("2").child("Phone").setValue(ph);
                 openDriver();
             }
         });
@@ -151,5 +159,9 @@ public class add extends AppCompatActivity {
         fAuth.signOut();
         startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
+    }
+
+    public void back(View view){
+        startActivity(new Intent(getApplicationContext(), Drivers.class));
     }
 }

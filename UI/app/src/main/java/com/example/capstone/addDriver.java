@@ -3,6 +3,7 @@ package com.example.capstone;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class addDriver extends AppCompatDialogFragment {
     private EditText fn, ln, ph, em;
@@ -59,4 +62,5 @@ public class addDriver extends AppCompatDialogFragment {
     public interface addDriverListener{
         void applyTexts(String fn, String ln, String ph, String em);
     }
+
 }
