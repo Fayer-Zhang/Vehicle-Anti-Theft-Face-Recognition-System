@@ -59,14 +59,6 @@ def remove_your_face(firstname, lastname, email, phone):
         print("No Users exist for User Removal.")
 
 
-if __name__ == "__main__":
-    f = input('Enter your First Name:')
-    l = input('Enter your Last Name:')
-    e = input('Enter your E-Mail:')
-    p = input('Enter your Phone:')
-    remove_your_face(f, l, e, p)
-
-
 def remove_parallel_user_photos(i, count2):
     DBHelper.delete_user_photo("User_" + str(count2) + "/" + str(i) + ".jpg")
 
@@ -76,3 +68,11 @@ def update_parallel_user_photos(i, count2):
                                        "User_" + str(count2) + "/" + str(i) + ".jpg")
     DBHelper.upload_user_photo("User_" + str(count2) + "/" + str(i) + ".jpg")
     DBHelper.delete_user_photo("User_" + str(count2 + 1) + "/" + str(i) + ".jpg")
+
+
+if __name__ == "__main__":
+    f = input('Enter your First Name:')
+    l = input('Enter your Last Name:')
+    e = input('Enter your E-Mail:')
+    p = input('Enter your Phone:')
+    remove_your_face(f, l, e, p)

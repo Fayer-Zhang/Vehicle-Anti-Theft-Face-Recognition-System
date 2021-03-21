@@ -31,13 +31,13 @@ def upload_thief_face():
         print("An intruder is recorded.")
 
 
-if __name__ == "__main__":
-    upload_thief_face()
-
-
 def upload_parallel_thief_photos(i, count):
     DBHelper.upload_thief_photo("Thief_" + str(count) + "/" + str(i) + ".jpg")
 
 
 def upload_parallel_thief_photo(i):
     DBHelper.upload_thief_photo("Thief_1/" + str(i) + ".jpg")
+
+
+if __name__ == "__main__":
+    upload_thief_face()

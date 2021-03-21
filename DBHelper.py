@@ -234,6 +234,40 @@ def get_date(thief_id):
     phone = db.child("Thieves").child(str(thief_id)).child("Date").get().val()
     return phone
 
+# Returns the first name or else an empty string.
+def get_update_firstname():
+    firstname = db.child("signal").child("4").child("First Name").get().val()
+    return firstname
+
+
+# Returns the last name or else an empty string.
+def get_update_lastname():
+    lastname = db.child("signal").child("4").child("Last Name").get().val()
+    return lastname
+
+
+# Returns the e-mail or else an empty string.
+def get_update_email():
+    email = db.child("signal").child("4").child("E-Mail").get().val()
+    return email
+
+
+# Returns the phone or else an empty string.
+def get_update_phone():
+    phone = db.child("signal").child("4").child("Phone").get().val()
+    return phone
+
+
+# Uploads the data of user input into firebase.
+def upload_update_data(firstname, lastname, email, phone):
+    data = {"First Name": firstname, "Last Name": lastname, "E-Mail": email, "Phone": phone}
+    db.child("signal").child("4").set(data)
+
+
+# Removes the inputs.
+def remove_update_data():
+    db.child("signal").child("4").remove()
+
 
 if __name__ == "__main__":
     upload_data("User_3", "RandomFirst", "RandomLast", "Random@gmail.com", "0000000000")
