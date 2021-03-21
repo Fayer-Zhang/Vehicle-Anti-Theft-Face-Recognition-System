@@ -1908,6 +1908,10 @@
         "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\40667036b414bb20a1cedf7f72502ec3\\appcompat-1.0.2\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
     },
     {
+        "merged": "D:\\Documents\\UniWork\\Year 4\\Semester 2\\CEG4913\\Project\\Vehicle Anti-Theft Face Recognition System\\UI\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_update.xml.flat",
+        "source": "D:\\Documents\\UniWork\\Year 4\\Semester 2\\CEG4913\\Project\\Vehicle Anti-Theft Face Recognition System\\UI\\app\\src\\main\\res\\layout\\activity_update.xml"
+    },
+    {
         "merged": "D:\\Documents\\UniWork\\Year 4\\Semester 2\\CEG4913\\Project\\Vehicle Anti-Theft Face Recognition System\\UI\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_top.xml.flat",
         "source": "C:\\Users\\batuh\\.gradle\\caches\\transforms-2\\files-2.1\\40667036b414bb20a1cedf7f72502ec3\\appcompat-1.0.2\\res\\anim\\abc_slide_in_top.xml"
     },

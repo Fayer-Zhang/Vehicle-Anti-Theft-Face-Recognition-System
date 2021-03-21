@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".add"
+    android:background="@drawable/background"
+    >
+
+    <include
+        layout="@layout/toolbar"/>
+
+    <TextView
+        android:id="@+id/updatedrivertitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="630dp"
+        android:gravity="center"
+        android:text="Update Main Driver"
+        android:textColor="#ffffff"
+        android:textSize="30dp"
+        app:fontFamily="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/fname2"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:background="@drawable/loginedittext"
+        android:hint="First Name"
+        android:paddingLeft="10dp"
+        android:textColorHint="#ffffff"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="145dp"
+        android:layout_marginBottom="540dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/lname2"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:background="@drawable/loginedittext"
+        android:hint="Last Name"
+        android:paddingLeft="10dp"
+        android:textColorHint="#ffffff"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="208dp"
+        android:layout_marginBottom="470dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/phone2"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:background="@drawable/loginedittext"
+        android:hint="Phone Number"
+        android:paddingLeft="10dp"
+        android:textColorHint="#ffffff"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="267dp"
+        android:layout_marginBottom="400dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/adddriver2"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/mybutton"
+        android:text="Update Driver"
+        android:textColor="#1D3790"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/cancel2"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/mybutton"
+        android:text="Cancel"
+        android:textColor="#1D3790"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-36:12
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-37:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\aca6b0ea2f4d45def09389f4ecfabcec\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\0ecb62519f5eb0b317f9964dd7f89cea\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\40667036b414bb20a1cedf7f72502ec3\appcompat-1.0.2\AndroidManifest.xml:17:1-22:12
@@ -49,20 +49,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\batuh\.g
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\cbb03bb6ba2755515928413b5010c307\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\44e70fc9191aabcb9a1106e63f92db5c\protolite-well-known-types-17.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\8085d12757cc44a8b6751453479a2343\grpc-android-1.28.0\AndroidManifest.xml:2:1-13:12
-INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
 		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:2:11-69
@@ -83,7 +83,7 @@ ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-T
 	android:name
 		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:6:22-77
 application
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:8:5-34:19
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:8:5-35:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\22b18261f1179a3e57de136dbecb0079\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\22b18261f1179a3e57de136dbecb0079\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-database:19.5.1] C:\Users\batuh\.gradle\caches\transforms-2\files-2.1\dc1a59822018662c1ca5a07816451c55\firebase-database-19.5.1\AndroidManifest.xml:28:5-36:19
@@ -136,56 +136,60 @@ activity#com.example.capstone.add
 ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:17:9-41
 	android:name
 		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:17:19-38
+activity#com.example.capstone.update
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:18:9-44
+	android:name
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:18:19-41
 activity#com.example.capstone.About
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:18:9-43
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:19:9-43
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:18:19-40
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:19:19-40
 activity#com.example.capstone.Support
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:19:9-45
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:20:9-45
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:19:19-42
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:20:19-42
 activity#com.example.capstone.Password
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:20:9-46
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:21:9-46
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:20:19-43
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:21:19-43
 activity#com.example.capstone.Enrollment
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:21:9-48
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:22:9-48
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:21:19-45
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:22:19-45
 activity#com.example.capstone.Drivers
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:22:9-45
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:23:9-45
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:22:19-42
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:23:19-42
 activity#com.example.capstone.Settings
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:23:9-46
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:24:9-46
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:23:19-43
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:24:19-43
 activity#com.example.capstone.signup
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:24:9-44
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:25:9-44
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:24:19-41
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:25:19-41
 activity#com.example.capstone.Login
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:25:9-43
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:26:9-43
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:25:19-40
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:26:19-40
 activity#com.example.capstone.homepage
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:26:9-46
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:27:9-46
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:26:19-43
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:27:19-43
 activity#com.example.capstone.MainActivity
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:27:9-33:20
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:28:9-34:20
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:27:19-47
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:28:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:28:13-32:29
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:29:13-33:29
 action#android.intent.action.MAIN
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:29:17-69
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:30:17-69
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:29:25-66
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:30:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:31:17-77
+ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:31:27-74
+		ADDED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml:32:27-74
 uses-sdk
 INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Documents\UniWork\Year 4\Semester 2\CEG4913\Project\Vehicle Anti-Theft Face Recognition System\UI\app\src\main\AndroidManifest.xml

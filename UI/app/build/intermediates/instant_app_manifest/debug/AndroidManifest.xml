@@ -30,6 +30,7 @@
         <activity android:name="com.example.capstone.Apps" />
         <activity android:name="com.example.capstone.Email" />
         <activity android:name="com.example.capstone.add" />
+        <activity android:name="com.example.capstone.update" />
         <activity android:name="com.example.capstone.About" />
         <activity android:name="com.example.capstone.Support" />
         <activity android:name="com.example.capstone.Password" />
