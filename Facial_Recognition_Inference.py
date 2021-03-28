@@ -47,6 +47,7 @@ def inference():
 
             img = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
             faces = faceDetector(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+            minDistance = 0.0
 
             for face in faces:
 
@@ -81,12 +82,12 @@ def inference():
 
                 # print("time taken = {:.3f} seconds".format(time.time() - t))
 
-        cv2.rectangle(im, (x1, y1), (x2, y2), (0, 255, 0), 2)
-        font_face = cv2.FONT_HERSHEY_SIMPLEX
-        font_scale = 0.8
-        text_color = (0, 255, 0)
-        printLabel = '{} {:0.4f}'.format(label, minDistance)
-        cv2.putText(im, printLabel, (int(x1), int(y1)), font_face, font_scale, text_color, thickness=2)
+            cv2.rectangle(im, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            font_face = cv2.FONT_HERSHEY_SIMPLEX
+            font_scale = 0.8
+            text_color = (0, 255, 0)
+            printLabel = '{} {:0.4f}'.format(label, minDistance)
+            cv2.putText(im, printLabel, (int(x1), int(y1)), font_face, font_scale, text_color, thickness=2)
 
         cv2.imshow('img', im)
 
