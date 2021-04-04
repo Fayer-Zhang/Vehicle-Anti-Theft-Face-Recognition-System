@@ -173,10 +173,10 @@ if __name__=="__main__":
         
         # get distance data from distance sensor
         dist = car.distance()
-        print ("Measured Distance = %.1f cm" % dist)
+        #print ("Measured Distance = %.1f cm" % dist)
         
         # Turn on motor if get sensor signal
-        if ((motorSignal=="on" or dist>15) and car.motorStop):
+        if ((motorSignal=="on" and dist>15) and car.motorStop):
             car.start_motor()
         elif ((motorSignal=="off" or dist<=10) and not car.motorStop):
             # Stop the motor if the vehicle is too close to the item at front as well
