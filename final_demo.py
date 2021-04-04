@@ -26,6 +26,8 @@ class Car:
         # preset GPIO ports for 2 motors
         self.Motor1 = {'EN': 25, 'input1': 24, 'input2': 23}
         self.Motor2 = {'EN': 17, 'input1': 27, 'input2': 22}
+        self.Motor3 = {'EN': 6, 'input1': 19, 'input2': 13}
+        self.Motor4 = {'EN': 16, 'input1': 20, 'input2': 21}
         
         # preset the port for buttons and alarm
         GPIO.setup(26,GPIO.OUT)   # alarm output
@@ -40,12 +42,18 @@ class Car:
         for x in self.Motor1:
             GPIO.setup(self.Motor1[x], GPIO.OUT)
             GPIO.setup(self.Motor2[x], GPIO.OUT)
+            GPIO.setup(self.Motor3[x], GPIO.OUT)
+            GPIO.setup(self.Motor4[x], GPIO.OUT)
         
         # utilize PWM function, enable motors and frequency is 100Hz
         self.EN1 = GPIO.PWM(self.Motor1['EN'], 100)    
-        self.EN2 = GPIO.PWM(self.Motor2['EN'], 100)    
+        self.EN2 = GPIO.PWM(self.Motor2['EN'], 100)
+        self.EN3 = GPIO.PWM(self.Motor3['EN'], 100)
+        self.EN4 = GPIO.PWM(self.Motor4['EN'], 100)  
         self.EN1.start(0)                    
         self.EN2.start(0)
+        self.EN3.start(0)
+        self.EN4.start(0)
         
         # stop signals for motors and alarm
         self.motorStop=True
@@ -62,10 +70,16 @@ class Car:
         self.motorStop=False
         self.EN1.ChangeDutyCycle(50)
         self.EN2.ChangeDutyCycle(50)
+        self.EN3.ChangeDutyCycle(50)
+        self.EN4.ChangeDutyCycle(50)
         GPIO.output(self.Motor1['input1'], GPIO.LOW)
         GPIO.output(self.Motor1['input2'], GPIO.HIGH)
         GPIO.output(self.Motor2['input1'], GPIO.HIGH)
         GPIO.output(self.Motor2['input2'], GPIO.LOW)
+        GPIO.output(self.Motor3['input1'], GPIO.LOW)
+        GPIO.output(self.Motor3['input2'], GPIO.HIGH)
+        GPIO.output(self.Motor4['input1'], GPIO.HIGH)
+        GPIO.output(self.Motor4['input2'], GPIO.LOW)
         print("motor is turned on")
 
     def stop_motor(self):
@@ -73,6 +87,8 @@ class Car:
         self.motorStop=True
         self.EN1.ChangeDutyCycle(0)
         self.EN2.ChangeDutyCycle(0)
+        self.EN3.ChangeDutyCycle(0)
+        self.EN4.ChangeDutyCycle(0)
         print("motor stops")
     
     def start_alarm(self):
@@ -157,7 +173,7 @@ if __name__=="__main__":
         
         # get distance data from distance sensor
         dist = car.distance()
-        #print ("Measured Distance = %.1f cm" % dist)
+        print ("Measured Distance = %.1f cm" % dist)
         
         # Turn on motor if get sensor signal
         if (motorSignal=="on" and car.motorStop):
