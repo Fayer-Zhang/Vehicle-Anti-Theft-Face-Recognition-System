@@ -54,7 +54,7 @@ class Car:
         
         # countor for theaf picture been taken
         self.counter = self.firebase.database().child("signal").child(1).child("counter").get().val()
-        print(str(self.counter))
+        #print(str(self.counter))
         
 # new update motor and alarm functions, are able to connect embedded system throught firebase
 
@@ -180,14 +180,17 @@ if __name__=="__main__":
             
         # Take a picture of someone or some thing try to get close to the vehicle
         if (dist<=15 and car.cameraOff and car.motorStop and car.alarmStop):
-            print('Take a theaf picture due to distance at ' + str(int(dist)) + 'cm')
-            camera = PiCamera()
-            camera.start_preview()
-            # Camera warm-up time
-            time.sleep(1)
-            camera.capture('/home/pi/Vehicle-Anti-Theft-Face-Recognition-System/sensor/picture'+str(car.counter)+'.jpg')
-            camera.close()
-            storage.child('Photos_of_Thieves/Thief_Sensor/picture'+str(car.counter)+'.jpg').put('/home/pi/Vehicle-Anti-Theft-Face-Recognition-System/sensor/picture'+str(car.counter)+'.jpg')
-            car.counter+=1
-            car.firebase.database().child("signal").child(1).child("counter").set(car.counter)
+            time.sleep(5)
+            dist = car.distance()
+            if (dist<=15):
+                print('Take a theaf picture due to distance at ' + str(int(dist)) + 'cm')
+                camera = PiCamera()
+                camera.start_preview()
+                # Camera warm-up time
+                time.sleep(1)
+                camera.capture('/home/pi/Vehicle-Anti-Theft-Face-Recognition-System/sensor/picture'+str(car.counter)+'.jpg')
+                camera.close()
+                storage.child('Photos_of_Thieves/Thief_Sensor/picture'+str(car.counter)+'.jpg').put('/home/pi/Vehicle-Anti-Theft-Face-Recognition-System/sensor/picture'+str(car.counter)+'.jpg')
+                car.counter+=1
+                car.firebase.database().child("signal").child(1).child("counter").set(car.counter)
         time.sleep(1)
