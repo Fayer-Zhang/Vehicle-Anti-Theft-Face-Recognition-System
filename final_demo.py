@@ -39,8 +39,8 @@ class Motor:
         self.motorStop=False
         self.EN1.ChangeDutyCycle(50)
         self.EN2.ChangeDutyCycle(50)
-        GPIO.output(self.Motor1['input1'], GPIO.HIGH)
-        GPIO.output(self.Motor1['input2'], GPIO.LOW)
+        GPIO.output(self.Motor1['input1'], GPIO.LOW)
+        GPIO.output(self.Motor1['input2'], GPIO.HIGH)
         GPIO.output(self.Motor2['input1'], GPIO.HIGH)
         GPIO.output(self.Motor2['input2'], GPIO.LOW)
         print("motor is turned on")
