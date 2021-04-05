@@ -3,10 +3,11 @@ import os
 import math
 import cv2
 import Facial_Recognition_Enrollment
+import Facial_Image_Augmentation
 
 
 def register_your_face(label):
-    num_cap = 50
+    num_cap = 10
 
     path = sys.path[0] + '/Facial_images/face_rec/train/' + label
 
@@ -30,14 +31,4 @@ def register_your_face(label):
     cap.release()
     cv2.destroyAllWindows()
 
-
-if __name__ == "__main__":
-    print("Face registration start...")
-    print()
-    label = input('Pleas enter your Name/Label: ')
-    register_your_face(label)
-    print("Data saved! Starting enrollment...")
-    print()
-    Facial_Recognition_Enrollment.enroll_face_dataset()  # Need discuss and modify after intergrate with database.
-    print("Face registration completed!")
-    print()
+    Facial_Image_Augmentation.facial_recognition_augmentation(label)
