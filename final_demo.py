@@ -170,6 +170,8 @@ if __name__=="__main__":
         alarmSignal = signals.child(1).child("alarm").get().val()
         signals = database.child("signal")
         cameraSignal = signals.child(1).child("camera").get().val()
+        signals = database.child("signal")
+        powerSignal = signals.child(1).child("power").get().val()
         
         # get distance data from distance sensor
         dist = car.distance()
@@ -189,9 +191,9 @@ if __name__=="__main__":
             car.stop_alarm()
             
         # Turn on remote camera if get sensor signal
-        if (cameraSignal=="on" and car.cameraOff):
+        if (cameraSignal=="on" and car.cameraOff and powerSignal=="off"):
             car.start_camera()
-        elif (cameraSignal=="off" and not car.cameraOff):
+        elif ((cameraSignal=="off" and not car.cameraOff) or powerSignal =="on"):
             car.stop_camera()
             
         # Take a picture of someone or some thing try to get close to the vehicle
