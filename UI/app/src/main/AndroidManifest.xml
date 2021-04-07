@@ -12,10 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Apps"></activity>
+        <activity android:name=".VThiefPictures"></activity>
+        <activity android:name=".remotecamera" />
+        <activity android:name=".update" />
+        <activity android:name=".Apps" />
         <activity android:name=".Email" />
         <activity android:name=".add" />
-        <activity android:name=".update" />
         <activity android:name=".About" />
         <activity android:name=".Support" />
         <activity android:name=".Password" />

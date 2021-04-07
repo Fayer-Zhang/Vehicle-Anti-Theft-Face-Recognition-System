@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -152,6 +154,7 @@ public class Drivers extends AppCompatActivity{
             documentReference.update("Phone Number"+String.valueOf(removeP+1), FieldValue.delete());
             user.put("Number of Drivers",String.valueOf(removeP));
             documentReference.update(user);
+
             finish();
             startActivity(getIntent());
         } else {
@@ -160,7 +163,7 @@ public class Drivers extends AppCompatActivity{
     }
 
     public void updateDriver(){
-        startActivity(new Intent(getApplicationContext(), com.example.capstone.update.class));
+        startActivity(new Intent(getApplicationContext(), update.class));
     }
 
     public void logout(View view){

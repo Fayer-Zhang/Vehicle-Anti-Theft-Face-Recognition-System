@@ -11,71 +11,191 @@
         layout="@layout/toolbar"/>
 
     <TextView
-    android:id="@+id/supporttitle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="15dp"
-    android:layout_marginBottom="630dp"
-    android:gravity="center"
-    android:text="Support"
-    android:textColor="#ffffff"
-    android:textSize="30dp"
-    app:fontFamily="normal"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/supporttitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Support"
+        android:textColor="#ffffff"
+        android:autoSizeMaxTextSize="30dp"
+        android:autoSizeMinTextSize="18dp"
+        android:autoSizeStepGranularity="2dp"
+        android:autoSizeTextType="uniform"
+        app:fontFamily="normal"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"/>
 
     <TextView
         android:id="@+id/contacttitle"
-        android:layout_width="365dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="550dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="Contact us"
         android:textColor="#ffffff"
-        android:textSize="22dp"
+        android:autoSizeMaxTextSize="22dp"
+        android:autoSizeMinTextSize="12dp"
+        android:autoSizeStepGranularity="2dp"
+        android:autoSizeTextType="uniform"
         app:fontFamily="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="@id/guideline1" />
 
     <TextView
         android:id="@+id/contacttitle2"
-        android:layout_width="365dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="435dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="Chat with a Customer Specialist\n\nHave questions? Email us for real-time help.\n\napere094@uottawa.ca"
         android:textColor="#ffffff"
-        android:textSize="15dp"
+        android:autoSizeMaxTextSize="15dp"
+        android:autoSizeMinTextSize="7dp"
+        android:autoSizeStepGranularity="2dp"
+        android:autoSizeTextType="uniform"
         app:fontFamily="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="@id/guideline1" />
 
     <TextView
         android:id="@+id/contacttitle3"
-        android:layout_width="365dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="390dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="Call us"
         android:textColor="#ffffff"
-        android:textSize="15dp"
+        android:autoSizeMaxTextSize="15dp"
+        android:autoSizeMinTextSize="7dp"
+        android:autoSizeStepGranularity="2dp"
+        android:autoSizeTextType="uniform"
         android:textStyle="bold"
         app:fontFamily="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline11"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="@id/guideline1" />
 
     <TextView
         android:id="@+id/contacttitle4"
-        android:layout_width="365dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="280dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="Get in touch, free of charge. Just call 1-800-123-4567\n\nCustomer representatives are available from 3 a.m. to 10 p.m., daily."
         android:textColor="#ffffff"
-        android:textSize="15dp"
+        android:autoSizeMaxTextSize="15dp"
+        android:autoSizeMinTextSize="7dp"
+        android:autoSizeStepGranularity="2dp"
+        android:autoSizeTextType="uniform"
         app:fontFamily="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline13"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="@id/guideline1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.06" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.43" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.49" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

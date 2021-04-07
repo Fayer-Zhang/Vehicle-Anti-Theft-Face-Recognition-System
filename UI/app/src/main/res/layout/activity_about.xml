@@ -11,31 +11,108 @@
         layout="@layout/toolbar"/>
 
     <TextView
-    android:id="@+id/ebouttitle"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="15dp"
-    android:layout_marginBottom="630dp"
-    android:gravity="center"
-    android:text="About us"
-    android:textColor="#ffffff"
-    android:textSize="30dp"
-    app:fontFamily="normal"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/abouttitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="About us"
+        android:textColor="#ffffff"
+        android:autoSizeMaxTextSize="30dp"
+        android:autoSizeMinTextSize="18dp"
+        android:autoSizeStepGranularity="2dp"
+        android:autoSizeTextType="uniform"
+        app:fontFamily="normal"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="@id/guideline2" />
 
     <TextView
-        android:id="@+id/ebouttitle"
-        android:layout_width="384dp"
-        android:layout_height="607dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center_vertical"
+        android:id="@+id/abouttitle2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="Keyless Auto Vehicle Anti-Theft Facial Recognition System\n\nComputer Engineering capstone 2020-2021\n\nVehicle Anti-Theft Facial Recognition System is designed to prevent burglary using facial recognition system. Hardware uses Raspberry Pi 4 and software uses the Python. The user interface of software is based on android studio. The administrators can choose their option for adding a new driver, delete the current driver, and update the face data of the current driver. The camera is going to be connected to a Raspberry Pi 4 board which is used for taking the picture of a user's face. Then the Raspberry Pi will use OpenCV library to recognize the user's face.\n\nCreated by: Alexandre Pereira, Qian Ma, Leyao Li, Feier Zhang, Batuhan Başoğlu and Sam Hermas Parada"
         android:textColor="#ffffff"
-        android:textSize="20dp"
+        android:autoSizeMaxTextSize="20dp"
+        android:autoSizeMinTextSize="12dp"
+        android:autoSizeStepGranularity="2dp"
+        android:autoSizeTextType="uniform"
         app:fontFamily="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="@id/guideline1" />
+
+    <TextView
+        android:id="@+id/abouttitle3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Click Here to Visit Our Website!"
+        android:textColor="#ffffff"
+        android:autoSizeMaxTextSize="20dp"
+        android:autoSizeMinTextSize="12dp"
+        android:autoSizeStepGranularity="2dp"
+        android:autoSizeTextType="uniform"
+        app:fontFamily="normal"
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="@id/guideline1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
