@@ -25,7 +25,6 @@ public class homepage extends AppCompatActivity {
     FirebaseAuth fAuth;
     private Button setting, poweron, alarmoff, apps;
     DatabaseReference reff;
-    Signal sig;
     int check = 0;
     int check2 = 0;
     private ImageView a, e;
@@ -46,11 +45,9 @@ public class homepage extends AppCompatActivity {
         e = findViewById(R.id.engine);
 
         reff = FirebaseDatabase.getInstance().getReference().child("signal");
-        sig = new Signal();
-        sig.setMotor("off");
-        sig.setPower("off");
-        sig.setAlarm("off");
-        reff.child("1").setValue(sig);
+        reff.child("1").child("power").setValue("off");
+        reff.child("1").child("motor").setValue("off");
+        reff.child("1").child("alarm").setValue("off");
 
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,18 +68,17 @@ public class homepage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(check == 0){
-                    sig.setPower("on");
+                    reff.child("1").child("power").setValue("on");
                     e.setImageResource(R.drawable.ic_power_on);
                     et.setText("ON");
                     check = 1;
                 } else {
-                    sig.setPower("off");
+                    reff.child("1").child("power").setValue("off");
                     e.setImageResource(R.drawable.ic_power_off);
                     et.setText("OFF");
                     check = 0;
 
                 }
-                reff.child("1").setValue(sig);
             }
         });
 
@@ -90,18 +86,17 @@ public class homepage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(check2 == 0){
-                    sig.setAlarm("on");
+                    reff.child("1").child("alarm").setValue("on");
                     a.setImageResource(R.drawable.ic_alarm_on);
                     at.setText("ON");
                     check2 = 1;
                 } else {
-                    sig.setAlarm("off");
+                    reff.child("1").child("alarm").setValue("off");
                     a.setImageResource(R.drawable.ic_alarm_off);
                     at.setText("OFF");
                     check2 = 0;
 
                 }
-                reff.child("1").setValue(sig);
             }
         });
 

@@ -31,7 +31,6 @@ import java.util.ArrayList;
 
 public class VThiefPictures extends AppCompatActivity {
     FirebaseAuth fAuth;
-    private ImageView mImageView;
     private FirebaseStorage storage=FirebaseStorage.getInstance();
     ImageView img1, img2, img3;
     DatabaseReference reff;
