@@ -15,11 +15,14 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Password extends AppCompatActivity {
     FirebaseAuth fAuth;
     private Button reset, backb;
     private EditText email;
+    DatabaseReference reff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,11 @@ public class Password extends AppCompatActivity {
 
     public void logout(View view){
         fAuth.signOut();
+        reff = FirebaseDatabase.getInstance().getReference().child("signal");
+        reff.child("1").child("camera").setValue("off");
+        reff.child("1").child("power").setValue("off");
+        reff.child("1").child("motor").setValue("off");
+        reff.child("1").child("alarm").setValue("off");
         startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
     }

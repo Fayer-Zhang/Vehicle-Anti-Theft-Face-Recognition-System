@@ -19,6 +19,8 @@ import android.widget.ImageView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -32,6 +34,7 @@ public class VThiefPictures extends AppCompatActivity {
     private ImageView mImageView;
     private FirebaseStorage storage=FirebaseStorage.getInstance();
     ImageView img1, img2, img3;
+    DatabaseReference reff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +82,11 @@ public class VThiefPictures extends AppCompatActivity {
 
     public void logout(View view){
         fAuth.signOut();
+        reff = FirebaseDatabase.getInstance().getReference().child("signal");
+        reff.child("1").child("camera").setValue("off");
+        reff.child("1").child("power").setValue("off");
+        reff.child("1").child("motor").setValue("off");
+        reff.child("1").child("alarm").setValue("off");
         startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
     }

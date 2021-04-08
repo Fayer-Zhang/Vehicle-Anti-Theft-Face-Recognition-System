@@ -109,6 +109,11 @@ public class homepage extends AppCompatActivity {
 
     public void logout(View view){
         fAuth.signOut();
+        reff = FirebaseDatabase.getInstance().getReference().child("signal");
+        reff.child("1").child("camera").setValue("off");
+        reff.child("1").child("power").setValue("off");
+        reff.child("1").child("motor").setValue("off");
+        reff.child("1").child("alarm").setValue("off");
         startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
     }

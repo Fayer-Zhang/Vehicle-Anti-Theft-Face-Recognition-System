@@ -9,10 +9,13 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Apps extends AppCompatActivity {
     FirebaseAuth fAuth;
     Button remote, thief;
+    DatabaseReference reff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +41,11 @@ public class Apps extends AppCompatActivity {
 
     public void logout(View view){
         fAuth.signOut();
+        reff = FirebaseDatabase.getInstance().getReference().child("signal");
+        reff.child("1").child("camera").setValue("off");
+        reff.child("1").child("power").setValue("off");
+        reff.child("1").child("motor").setValue("off");
+        reff.child("1").child("alarm").setValue("off");
         startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
     }

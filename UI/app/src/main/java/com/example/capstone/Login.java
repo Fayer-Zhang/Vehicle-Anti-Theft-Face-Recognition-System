@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 public class Login extends AppCompatActivity {
     private EditText email, password;
@@ -28,6 +29,7 @@ public class Login extends AppCompatActivity {
     private TextView account, pass;
     FirebaseAuth fAuth;
     private String em, pw;
+    DatabaseReference reff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
