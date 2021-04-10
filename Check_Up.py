@@ -17,7 +17,7 @@ def update():
             if not os.path.isdir("Facial_images/face_rec/train/User_" + str(count)):
                 os.makedirs("Facial_images/face_rec/train/User_" + str(count))
             Parallel(n_jobs=multiprocessing.cpu_count())(
-                delayed(download_parallel_user_photos)(i, count) for i in range(50))
+                delayed(download_parallel_user_photos)(i, count) for i in range(10))
         print("User data is checked.")
     except:
         print("No Users are registered.")
@@ -29,7 +29,7 @@ def update():
             if not os.path.isdir("Photos_of_Thieves/Thief_" + str(count)):
                 os.makedirs("Photos_of_Thieves/Thief_" + str(count))
             Parallel(n_jobs=multiprocessing.cpu_count())(
-                delayed(download_parallel_thief_photos)(i, count) for i in range(50))
+                delayed(download_parallel_thief_photos)(i, count) for i in range(10))
             print("Thief_" + str(count) + " is detected at " + DBHelper.get_time("Thief_" + str(count)) + ", " + DBHelper.get_date("Thief_" + str(count)))
         print("Thief data is checked.")
     except:

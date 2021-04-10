@@ -21,7 +21,7 @@ def remove_your_face(firstname, lastname, email, phone):
                     "User_" + str(count2)) == lastname and DBHelper.get_email(
                 "User_" + str(count2)) == email and DBHelper.get_phone("User_" + str(count2)) == phone:
                 Parallel(n_jobs=multiprocessing.cpu_count())(
-                    delayed(remove_parallel_user_photos)(i, count2) for i in range(50))
+                    delayed(remove_parallel_user_photos)(i, count2) for i in range(10))
                 DBHelper.remove_data("User_" + str(count2))
                 shutil.rmtree("Facial_images/face_rec/train/User_" + str(count2))
                 print("Successfully removed the User.")
@@ -32,7 +32,7 @@ def remove_your_face(firstname, lastname, email, phone):
                 if not os.path.isdir("Facial_images/face_rec/train/User_" + str(count2)):
                     os.makedirs("Facial_images/face_rec/train/User_" + str(count2))
                 Parallel(n_jobs=multiprocessing.cpu_count())(
-                    delayed(update_parallel_user_photos)(i, count2) for i in range(50))
+                    delayed(update_parallel_user_photos)(i, count2) for i in range(10))
                 DBHelper.upload_data("User_" + str(count2), DBHelper.get_firstname("User_" + str(count2 + 1)),
                                      DBHelper.get_lastname("User_" + str(count2 + 1)),
                                      DBHelper.get_email("User_" + str(count2 + 1)),
@@ -44,7 +44,7 @@ def remove_your_face(firstname, lastname, email, phone):
             if not os.path.isdir("Facial_images/face_rec/train/User_" + str(count2)):
                 os.makedirs("Facial_images/face_rec/train/User_" + str(count2))
             Parallel(n_jobs=multiprocessing.cpu_count())(
-                delayed(update_parallel_user_photos)(i, count2) for i in range(50))
+                delayed(update_parallel_user_photos)(i, count2) for i in range(10))
             DBHelper.upload_data("User_" + str(count2), DBHelper.get_firstname("User_" + str(count2 + 1)),
                                  DBHelper.get_lastname("User_" + str(count2 + 1)),
                                  DBHelper.get_email("User_" + str(count2 + 1)),

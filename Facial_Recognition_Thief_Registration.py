@@ -5,7 +5,7 @@ import cv2
 
 
 def register_your_face(label):
-    num_cap = 50
+    num_cap = 10
 
     path = sys.path[0] + '/Photos_of_Thieves/' + label
 

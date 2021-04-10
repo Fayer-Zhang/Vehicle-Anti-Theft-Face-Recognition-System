@@ -16,7 +16,7 @@ def upload_thief_face():
             count += 1
         Facial_Recognition_Thief_Registration.register_your_face("Thief_" + str(count))
         Parallel(n_jobs=multiprocessing.cpu_count())(
-            delayed(upload_parallel_thief_photos)(i, count) for i in range(50))
+            delayed(upload_parallel_thief_photos)(i, count) for i in range(10))
         date = datetime.now().strftime("%d/%m/%Y")
         time = datetime.now().strftime("%H:%M:%S")
         DBHelper.upload_thief_data("Thief_" + str(count), date, time)
@@ -24,7 +24,7 @@ def upload_thief_face():
     except:
         Facial_Recognition_Thief_Registration.register_your_face("Thief_1")
         Parallel(n_jobs=multiprocessing.cpu_count())(
-            delayed(upload_parallel_thief_photo)(i) for i in range(50))
+            delayed(upload_parallel_thief_photo)(i) for i in range(10))
         date = datetime.now().strftime("%d/%m/%Y")
         time = datetime.now().strftime("%H:%M:%S")
         DBHelper.upload_thief_data("Thief_1", date, time)

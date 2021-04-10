@@ -208,7 +208,8 @@ if __name__=="__main__":
                 time.sleep(1)
                 camera.capture('/home/pi/Vehicle-Anti-Theft-Face-Recognition-System/sensor/picture'+str(car.counter)+'.jpg')
                 camera.close()
-                storage.child('Photos_of_Thieves/Thief_Sensor/picture'+str(car.counter)+'.jpg').put('/home/pi/Vehicle-Anti-Theft-Face-Recognition-System/sensor/picture'+str(car.counter)+'.jpg')
+                storage.child('Photos_of_Thieves/Thief_Sensor/picture'+str(car.counter)+'.jpg')\
+                    .put('/home/pi/Vehicle-Anti-Theft-Face-Recognition-System/sensor/picture'+str(car.counter)+'.jpg')
                 car.counter+=1
                 car.firebase.database().child("signal").child(1).child("counter").set(car.counter)
         time.sleep(1)

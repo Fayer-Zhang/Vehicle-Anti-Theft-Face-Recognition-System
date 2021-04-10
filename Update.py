@@ -19,7 +19,7 @@ def update_your_face(firstname, lastname, email, phone):
                 break
         print("Face registration start...")
         Facial_Recognition_Registration.register_your_face("User_" + str(count))
-        Parallel(n_jobs=multiprocessing.cpu_count())(delayed(update_parallel_user_photos)(i, count) for i in range(50))
+        Parallel(n_jobs=multiprocessing.cpu_count())(delayed(update_parallel_user_photos)(i, count) for i in range(10))
         DBHelper.upload_data("User_" + str(count), firstname, lastname, email, phone)
         print("Data saved! Starting enrollment...")
         Facial_Recognition_Enrollment.enroll_face_dataset()
